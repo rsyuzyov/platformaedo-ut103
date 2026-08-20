@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
 			<v8:content>Настройки</v8:content>
 		</v8:item>
 	</Title>
-	<WindowOpeningMode>DontBlock</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
-	<Group>Vertical</Group>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
@@ -74,7 +72,6 @@
 			</ToolTip>
 			<HorizontalStretch>true</HorizontalStretch>
 			<VerticalStretch>false</VerticalStretch>
-			<Group>HorizontalIfPossible</Group>
 			<VerticalAlign>Top</VerticalAlign>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
@@ -94,7 +91,6 @@
 						</v8:item>
 					</ToolTip>
 					<Group>Vertical</Group>
-					<Representation>WeakSeparation</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ЛевоРасширеннаяПодсказка" id="21"/>
 					<ChildItems>
@@ -194,6 +190,7 @@
 						</InputField>
 						<CheckBoxField name="ИнтерактивноОбновлятьСтатусыДО" id="27">
 							<DataPath>ИнтерактивноОбновлятьСтатусыДО</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ИнтерактивноОбновлятьСтатусыДОКонтекстноеМеню" id="28"/>
 							<ExtendedTooltip name="ИнтерактивноОбновлятьСтатусыДОРасширеннаяПодсказка" id="29"/>
 							<Events>
@@ -203,6 +200,7 @@
 						<CheckBoxField name="РаботаемПоУС" id="91">
 							<DataPath>РаботаемПоУС</DataPath>
 							<Visible>false</Visible>
+							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="РаботаемПоУСКонтекстноеМеню" id="92"/>
 							<ExtendedTooltip name="РаботаемПоУСРасширеннаяПодсказка" id="93"/>
 							<Events>
@@ -212,6 +210,7 @@
 						<CheckBoxField name="ПоказыватьСлужебныеРеквизиты" id="76">
 							<DataPath>ПоказыватьСлужебныеРеквизиты</DataPath>
 							<Visible>false</Visible>
+							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ПоказыватьСлужебныеРеквизитыКонтекстноеМеню" id="77"/>
 							<ExtendedTooltip name="ПоказыватьСлужебныеРеквизитыРасширеннаяПодсказка" id="78"/>
 							<Events>
@@ -277,7 +276,6 @@
 			</ToolTip>
 			<GroupVerticalAlign>Top</GroupVerticalAlign>
 			<Group>Vertical</Group>
-			<Representation>WeakSeparation</Representation>
 			<ExtendedTooltip name="ПараметрыАвторизацииИПодписанияРасширеннаяПодсказка" id="17"/>
 			<ChildItems>
 				<LabelDecoration name="Декорация1" id="68">
@@ -316,7 +314,6 @@
 					<v8:content>Для технического специалиста</v8:content>
 				</v8:item>
 			</CollapsedRepresentationTitle>
-			<Representation>WeakSeparation</Representation>
 			<ExtendedTooltip name="НастройкиРазработчикаРасширеннаяПодсказка" id="82"/>
 			<ChildItems>
 				<CheckBoxField name="ИспользоватьТестовыйКонтур" id="83">
@@ -410,7 +407,6 @@
 						</v8:item>
 					</ToolTip>
 					<GroupVerticalAlign>Top</GroupVerticalAlign>
-					<Group>HorizontalIfPossible</Group>
 					<VerticalAlign>Top</VerticalAlign>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
@@ -520,7 +516,6 @@
 											<v8:content>Группа описание шага</v8:content>
 										</v8:item>
 									</ToolTip>
-									<Group>HorizontalIfPossible</Group>
 									<Behavior>Collapsible</Behavior>
 									<CollapsedRepresentationTitle>
 										<v8:item>
@@ -528,7 +523,6 @@
 											<v8:content>Инструкция</v8:content>
 										</v8:item>
 									</CollapsedRepresentationTitle>
-									<Representation>WeakSeparation</Representation>
 									<ExtendedTooltip name="ГруппаОписаниеШагаРасширеннаяПодсказка" id="67"/>
 									<ChildItems>
 										<LabelDecoration name="ОписаниеШага2" id="71">
@@ -591,7 +585,6 @@
 					</ToolTip>
 					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
 					<GroupVerticalAlign>Top</GroupVerticalAlign>
-					<Group>HorizontalIfPossible</Group>
 					<HorizontalAlign>Right</HorizontalAlign>
 					<VerticalAlign>Top</VerticalAlign>
 					<Representation>None</Representation>
@@ -622,7 +615,6 @@
 									<v8:content>Продолжить</v8:content>
 								</v8:item>
 							</Title>
-							<ButtonImportance>Main</ButtonImportance>
 							<ExtendedTooltip name="МастерНастроекПродолжитьРасширеннаяПодсказка" id="44"/>
 						</Button>
 					</ChildItems>

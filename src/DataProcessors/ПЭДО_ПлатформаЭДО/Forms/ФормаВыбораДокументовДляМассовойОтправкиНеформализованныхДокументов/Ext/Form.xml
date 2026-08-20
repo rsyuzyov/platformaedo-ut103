@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
-	<WindowOpeningMode>DontBlock</WindowOpeningMode>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
 	<AutoTitle>false</AutoTitle>
-	<Group>Vertical</Group>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
@@ -41,8 +39,6 @@
 							<v8:content>Группа информация организация</v8:content>
 						</v8:item>
 					</ToolTip>
-					<Group>HorizontalIfPossible</Group>
-					<Representation>WeakSeparation</Representation>
 					<ExtendedTooltip name="ГруппаИнформацияОрганизацияРасширеннаяПодсказка" id="4"/>
 					<ChildItems>
 						<InputField name="Организация" id="5">
@@ -94,6 +90,7 @@
 				</v8:item>
 			</ToolTip>
 			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<CheckBoxType>Auto</CheckBoxType>
 			<ContextMenu name="ЗапрашиватьОтветныеПодписиКонтекстноеМеню" id="82"/>
 			<ExtendedTooltip name="ЗапрашиватьОтветныеПодписиРасширеннаяПодсказка" id="83"/>
 			<Events>
@@ -104,8 +101,8 @@
 			<Representation>List</Representation>
 			<AutoMaxHeight>false</AutoMaxHeight>
 			<MultipleChoice>true</MultipleChoice>
-			<RowSelectionMode>Cell</RowSelectionMode>
-			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
@@ -155,7 +152,6 @@
 					<DataPath>ТаблицаНеформализованных.Документ</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<EditMode>EnterOnInput</EditMode>
-					<AutoEditMode>true</AutoEditMode>
 					<ContextMenu name="ТаблицаНеформализованныхДокументКонтекстноеМеню" id="28"/>
 					<ExtendedTooltip name="ТаблицаНеформализованныхДокументРасширеннаяПодсказка" id="29"/>
 				</InputField>
@@ -184,7 +180,6 @@
 								</v8:item>
 							</Title>
 							<EditMode>EnterOnInput</EditMode>
-							<AutoEditMode>true</AutoEditMode>
 							<Width>30</Width>
 							<ContextMenu name="ТаблицаНеформализованныхПредставлениеПечатнойФормыКонтекстноеМеню" id="43"/>
 							<ExtendedTooltip name="ТаблицаНеформализованныхПредставлениеПечатнойФормыРасширеннаяПодсказка" id="44"/>
@@ -192,7 +187,6 @@
 						<InputField name="ТаблицаНеформализованныхФорматФайла" id="33">
 							<DataPath>ТаблицаНеформализованных.ФорматФайла</DataPath>
 							<EditMode>EnterOnInput</EditMode>
-							<AutoEditMode>true</AutoEditMode>
 							<ChoiceList>
 								<xr:Item>
 									<xr:Presentation/>
@@ -258,7 +252,6 @@
 							<DataPath>ТаблицаНеформализованных.Получатель</DataPath>
 							<ReadOnly>true</ReadOnly>
 							<EditMode>EnterOnInput</EditMode>
-							<AutoEditMode>true</AutoEditMode>
 							<ContextMenu name="ТаблицаНеформализованныхПолучательКонтекстноеМеню" id="48"/>
 							<ExtendedTooltip name="ТаблицаНеформализованныхПолучательРасширеннаяПодсказка" id="49"/>
 						</InputField>
@@ -266,7 +259,6 @@
 							<DataPath>ТаблицаНеформализованных.ИдентификаторПолучателя</DataPath>
 							<ReadOnly>true</ReadOnly>
 							<EditMode>EnterOnInput</EditMode>
-							<AutoEditMode>true</AutoEditMode>
 							<ContextMenu name="ТаблицаНеформализованныхИдентификаторПолучателяКонтекстноеМеню" id="51"/>
 							<ExtendedTooltip name="ТаблицаНеформализованныхИдентификаторПолучателяРасширеннаяПодсказка" id="52"/>
 						</InputField>
@@ -277,7 +269,6 @@
 					<Visible>false</Visible>
 					<ReadOnly>true</ReadOnly>
 					<EditMode>EnterOnInput</EditMode>
-					<AutoEditMode>true</AutoEditMode>
 					<ContextMenu name="ТаблицаНеформализованныхИмяМенеджераПечатиКонтекстноеМеню" id="37"/>
 					<ExtendedTooltip name="ТаблицаНеформализованныхИмяМенеджераПечатиРасширеннаяПодсказка" id="38"/>
 				</InputField>
@@ -286,7 +277,6 @@
 					<Visible>false</Visible>
 					<ReadOnly>true</ReadOnly>
 					<EditMode>EnterOnInput</EditMode>
-					<AutoEditMode>true</AutoEditMode>
 					<ContextMenu name="ТаблицаНеформализованныхИмяМакетаКонтекстноеМеню" id="40"/>
 					<ExtendedTooltip name="ТаблицаНеформализованныхИмяМакетаРасширеннаяПодсказка" id="41"/>
 				</InputField>
@@ -324,14 +314,12 @@
 								<InputField name="ТаблицаНеформализованныхНомер" id="62">
 									<DataPath>ТаблицаНеформализованных.Номер</DataPath>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ContextMenu name="ТаблицаНеформализованныхНомерКонтекстноеМеню" id="63"/>
 									<ExtendedTooltip name="ТаблицаНеформализованныхНомерРасширеннаяПодсказка" id="64"/>
 								</InputField>
 								<InputField name="ТаблицаНеформализованныхДата" id="65">
 									<DataPath>ТаблицаНеформализованных.Дата</DataPath>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ContextMenu name="ТаблицаНеформализованныхДатаКонтекстноеМеню" id="66"/>
 									<ExtendedTooltip name="ТаблицаНеформализованныхДатаРасширеннаяПодсказка" id="67"/>
 								</InputField>
@@ -355,7 +343,6 @@
 								<InputField name="ТаблицаНеформализованныхВидДокумента" id="68">
 									<DataPath>ТаблицаНеформализованных.ВидДокумента</DataPath>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ListChoiceMode>true</ListChoiceMode>
 									<ChoiceList>
 										<xr:Item>
@@ -495,7 +482,6 @@
 								<InputField name="ТаблицаНеформализованныхЗаголовок" id="59">
 									<DataPath>ТаблицаНеформализованных.Заголовок</DataPath>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ContextMenu name="ТаблицаНеформализованныхЗаголовокКонтекстноеМеню" id="60"/>
 									<ExtendedTooltip name="ТаблицаНеформализованныхЗаголовокРасширеннаяПодсказка" id="61"/>
 								</InputField>
@@ -515,7 +501,7 @@
 									</ToolTip>
 									<ToolTipRepresentation>None</ToolTipRepresentation>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
+									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ТаблицаНеформализованныхЗапрашиватьОтветнуюПодписьКонтекстноеМеню" id="85"/>
 									<ExtendedTooltip name="ТаблицаНеформализованныхЗапрашиватьОтветнуюПодписьРасширеннаяПодсказка" id="86"/>
 								</CheckBoxField>
@@ -539,7 +525,6 @@
 				</v8:item>
 			</ToolTip>
 			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-			<Group>HorizontalIfPossible</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="54"/>

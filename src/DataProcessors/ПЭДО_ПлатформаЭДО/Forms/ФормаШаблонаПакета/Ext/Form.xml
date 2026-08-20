@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
-	<WindowOpeningMode>DontBlock</WindowOpeningMode>
-	<Group>Vertical</Group>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаСохранитьИЗакрыть" id="36">
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.СохранитьИЗакрыть</CommandName>
-				<ButtonImportance>Main</ButtonImportance>
 				<ExtendedTooltip name="ФормаСохранитьИЗакрытьРасширеннаяПодсказка" id="37"/>
 			</Button>
 			<Button name="СохранитьИзменения" id="38">
@@ -38,7 +35,6 @@
 					<v8:content>Группа основное окно</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Group>HorizontalIfPossible</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаОсновноеОкноРасширеннаяПодсказка" id="49"/>
@@ -52,7 +48,6 @@
 						</v8:item>
 					</ToolTip>
 					<ToolTipRepresentation>Button</ToolTipRepresentation>
-					<MarkRequiredComplete>true</MarkRequiredComplete>
 					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 					<AutoMarkIncomplete>true</AutoMarkIncomplete>
 					<ContextMenu name="НаименованиеКонтекстноеМеню" id="46"/>
@@ -104,15 +99,14 @@
 							<v8:content>Группа реквизиты настройки</v8:content>
 						</v8:item>
 					</ToolTip>
-					<Group>HorizontalIfPossible</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаРеквизитыНастройкиРасширеннаяПодсказка" id="10"/>
 					<ChildItems>
 						<Table name="ТаблицаТиповДокументов" id="11">
 							<Representation>List</Representation>
-							<RowSelectionMode>Cell</RowSelectionMode>
-							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
@@ -184,7 +178,6 @@
 												</v8:item>
 											</Title>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ТаблицаТиповДокументовТипДокументаПредставлениеКонтекстноеМеню" id="156"/>
 											<ExtendedTooltip name="ТаблицаТиповДокументовТипДокументаПредставлениеРасширеннаяПодсказка" id="157"/>
@@ -195,7 +188,6 @@
 										<InputField name="ТаблицаТиповДокументовФорматДокумента" id="30">
 											<DataPath>ТаблицаТиповДокументов.ФорматДокумента</DataPath>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ListChoiceMode>true</ListChoiceMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ChooseType>false</ChooseType>
@@ -217,7 +209,6 @@
 										</v8:item>
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ListChoiceMode>true</ListChoiceMode>
 									<ChooseType>false</ChooseType>
 									<TextEdit>false</TextEdit>
@@ -240,7 +231,6 @@
 										</v8:item>
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ТаблицаТиповДокументовТипСвязанногоДокументаКонтекстноеМеню" id="28"/>
 									<ExtendedTooltip name="ТаблицаТиповДокументовТипСвязанногоДокументаРасширеннаяПодсказка" id="29"/>
@@ -254,7 +244,6 @@
 										</v8:item>
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ListChoiceMode>true</ListChoiceMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ChooseType>false</ChooseType>
@@ -274,7 +263,6 @@
 										</v8:item>
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ListChoiceMode>true</ListChoiceMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ChooseType>false</ChooseType>
@@ -289,7 +277,6 @@
 									<DataPath>ТаблицаТиповДокументов.ПечатнаяФорма</DataPath>
 									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ТаблицаТиповДокументовПечатнаяФормаКонтекстноеМеню" id="34"/>
 									<ExtendedTooltip name="ТаблицаТиповДокументовПечатнаяФормаРасширеннаяПодсказка" id="35"/>
@@ -298,7 +285,6 @@
 									<DataPath>ТаблицаТиповДокументов.УсловиеПоиска</DataPath>
 									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ListChoiceMode>true</ListChoiceMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ChooseType>false</ChooseType>
@@ -351,7 +337,6 @@
 										<InputField name="ТаблицаТиповДокументовФорматФайла" id="164">
 											<DataPath>ТаблицаТиповДокументов.ФорматФайла</DataPath>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ListChoiceMode>true</ListChoiceMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ChooseType>false</ChooseType>
@@ -408,7 +393,6 @@
 												</v8:item>
 											</Title>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ListChoiceMode>true</ListChoiceMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ChooseType>false</ChooseType>
@@ -464,7 +448,6 @@
 					<v8:content>Группа массовое создание</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Group>HorizontalIfPossible</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаМассовоеСозданиеРасширеннаяПодсказка" id="51"/>
@@ -552,14 +535,13 @@
 									<v8:content>Группа лево</v8:content>
 								</v8:item>
 							</ToolTip>
-							<Group>HorizontalIfPossible</Group>
 							<Representation>None</Representation>
 							<ExtendedTooltip name="ГруппаЛевоРасширеннаяПодсказка" id="128"/>
 							<ChildItems>
 								<Table name="ВыбранныеОрганизации" id="129">
 									<Representation>List</Representation>
-									<RowSelectionMode>Cell</RowSelectionMode>
-									<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
 									<AutoInsertNewRow>true</AutoInsertNewRow>
 									<EnableStartDrag>true</EnableStartDrag>
 									<EnableDrag>true</EnableDrag>
@@ -611,7 +593,6 @@
 										<InputField name="ВыбранныеОрганизацииОрганизация" id="142">
 											<DataPath>ВыбранныеОрганизации.Организация</DataPath>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ВыбранныеОрганизацииОрганизацияКонтекстноеМеню" id="143"/>
 											<ExtendedTooltip name="ВыбранныеОрганизацииОрганизацияРасширеннаяПодсказка" id="144"/>
@@ -623,7 +604,6 @@
 											<DataPath>ВыбранныеОрганизации.ИНН</DataPath>
 											<Enabled>false</Enabled>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ВыбранныеОрганизацииИННКонтекстноеМеню" id="146"/>
 											<ExtendedTooltip name="ВыбранныеОрганизацииИННРасширеннаяПодсказка" id="147"/>
@@ -632,7 +612,6 @@
 											<DataPath>ВыбранныеОрганизации.КПП</DataPath>
 											<Enabled>false</Enabled>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ВыбранныеОрганизацииКППКонтекстноеМеню" id="149"/>
 											<ExtendedTooltip name="ВыбранныеОрганизацииКППРасширеннаяПодсказка" id="150"/>
@@ -654,14 +633,13 @@
 									<v8:content>Группа центр</v8:content>
 								</v8:item>
 							</ToolTip>
-							<Group>HorizontalIfPossible</Group>
 							<Representation>None</Representation>
 							<ExtendedTooltip name="ГруппаЦентрРасширеннаяПодсказка" id="75"/>
 							<ChildItems>
 								<Table name="ВыбранныеКонтрагенты" id="52">
 									<Representation>List</Representation>
-									<RowSelectionMode>Cell</RowSelectionMode>
-									<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
 									<AutoInsertNewRow>true</AutoInsertNewRow>
 									<EnableStartDrag>true</EnableStartDrag>
 									<EnableDrag>true</EnableDrag>
@@ -736,7 +714,6 @@
 										<InputField name="ВыбранныеКонтрагентыКонтрагент" id="65">
 											<DataPath>ВыбранныеКонтрагенты.Контрагент</DataPath>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ВыбранныеКонтрагентыКонтрагентКонтекстноеМеню" id="66"/>
 											<ExtendedTooltip name="ВыбранныеКонтрагентыКонтрагентРасширеннаяПодсказка" id="67"/>
@@ -748,7 +725,6 @@
 											<DataPath>ВыбранныеКонтрагенты.ИНН</DataPath>
 											<Enabled>false</Enabled>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ВыбранныеКонтрагентыИННКонтекстноеМеню" id="69"/>
 											<ExtendedTooltip name="ВыбранныеКонтрагентыИННРасширеннаяПодсказка" id="70"/>
@@ -757,7 +733,6 @@
 											<DataPath>ВыбранныеКонтрагенты.КПП</DataPath>
 											<Enabled>false</Enabled>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ВыбранныеКонтрагентыКППКонтекстноеМеню" id="72"/>
 											<ExtendedTooltip name="ВыбранныеКонтрагентыКППРасширеннаяПодсказка" id="73"/>
@@ -779,14 +754,13 @@
 									<v8:content>Группа право</v8:content>
 								</v8:item>
 							</ToolTip>
-							<Group>HorizontalIfPossible</Group>
 							<Representation>None</Representation>
 							<ExtendedTooltip name="ГруппаПравоРасширеннаяПодсказка" id="77"/>
 							<ChildItems>
 								<Table name="ТаблицаТиповДокументовМассовоеСоздание" id="78">
 									<Representation>List</Representation>
-									<RowSelectionMode>Cell</RowSelectionMode>
-									<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
 									<AutoInsertNewRow>true</AutoInsertNewRow>
 									<EnableStartDrag>true</EnableStartDrag>
 									<EnableDrag>true</EnableDrag>
@@ -844,7 +818,6 @@
 														</v8:item>
 													</Title>
 													<EditMode>EnterOnInput</EditMode>
-													<AutoEditMode>true</AutoEditMode>
 													<ListChoiceMode>true</ListChoiceMode>
 													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 													<ChooseType>false</ChooseType>
@@ -858,7 +831,6 @@
 												<InputField name="ТаблицаТиповДокументовМассовоеСозданиеФорматДокумента" id="97">
 													<DataPath>ТаблицаТиповДокументов.ФорматДокумента</DataPath>
 													<EditMode>EnterOnInput</EditMode>
-													<AutoEditMode>true</AutoEditMode>
 													<ListChoiceMode>true</ListChoiceMode>
 													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 													<ChooseType>false</ChooseType>
@@ -874,7 +846,6 @@
 											<DataPath>ТаблицаТиповДокументов.ТипДокумента</DataPath>
 											<Visible>false</Visible>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ТаблицаТиповДокументовМассовоеСозданиеТипДокументаКонтекстноеМеню" id="92"/>
 											<ExtendedTooltip name="ТаблицаТиповДокументовМассовоеСозданиеТипДокументаРасширеннаяПодсказка" id="93"/>
@@ -888,7 +859,6 @@
 												</v8:item>
 											</Title>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ListChoiceMode>true</ListChoiceMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ChooseType>false</ChooseType>
@@ -903,7 +873,6 @@
 											<DataPath>ТаблицаТиповДокументов.ТипСвязанногоДокумента</DataPath>
 											<Visible>false</Visible>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ТаблицаТиповДокументовМассовоеСозданиеТипСвязанногоДокументаКонтекстноеМеню" id="95"/>
 											<ExtendedTooltip name="ТаблицаТиповДокументовМассовоеСозданиеТипСвязанногоДокументаРасширеннаяПодсказка" id="96"/>
@@ -917,7 +886,6 @@
 												</v8:item>
 											</Title>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ListChoiceMode>true</ListChoiceMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ChooseType>false</ChooseType>
@@ -932,7 +900,6 @@
 											<DataPath>ТаблицаТиповДокументов.ПечатнаяФорма</DataPath>
 											<Visible>false</Visible>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ТаблицаТиповДокументовМассовоеСозданиеПечатнаяФормаКонтекстноеМеню" id="101"/>
 											<ExtendedTooltip name="ТаблицаТиповДокументовМассовоеСозданиеПечатнаяФормаРасширеннаяПодсказка" id="102"/>
@@ -941,7 +908,6 @@
 											<DataPath>ТаблицаТиповДокументов.УсловиеПоиска</DataPath>
 											<Visible>false</Visible>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 											<ContextMenu name="ТаблицаТиповДокументовМассовоеСозданиеУсловиеПоискаКонтекстноеМеню" id="104"/>
 											<ExtendedTooltip name="ТаблицаТиповДокументовМассовоеСозданиеУсловиеПоискаРасширеннаяПодсказка" id="105"/>
@@ -964,7 +930,6 @@
 												<InputField name="ТаблицаТиповДокументовМассовоеСозданиеФорматФайла" id="180">
 													<DataPath>ТаблицаТиповДокументов.ФорматФайла</DataPath>
 													<EditMode>EnterOnInput</EditMode>
-													<AutoEditMode>true</AutoEditMode>
 													<ListChoiceMode>true</ListChoiceMode>
 													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 													<ChooseType>false</ChooseType>
@@ -974,7 +939,6 @@
 												<InputField name="ТаблицаТиповДокументовМассовоеСозданиеВидНеформализованного" id="183">
 													<DataPath>ТаблицаТиповДокументов.ВидНеформализованного</DataPath>
 													<EditMode>EnterOnInput</EditMode>
-													<AutoEditMode>true</AutoEditMode>
 													<ListChoiceMode>true</ListChoiceMode>
 													<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 													<ChooseType>false</ChooseType>

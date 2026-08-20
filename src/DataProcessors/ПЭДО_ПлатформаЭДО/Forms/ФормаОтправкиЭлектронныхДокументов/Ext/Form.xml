@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
 			<v8:content>Формирование и отправка пакетов</v8:content>
 		</v8:item>
 	</Title>
-	<WindowOpeningMode>DontBlock</WindowOpeningMode>
-	<Group>Vertical</Group>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
@@ -29,7 +27,6 @@
 					<v8:content>Группа шапка</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Group>HorizontalIfPossible</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="18"/>
@@ -66,14 +63,13 @@
 						</v8:item>
 					</ToolTip>
 					<Group>Vertical</Group>
-					<Representation>WeakSeparation</Representation>
 					<ExtendedTooltip name="ГруппаЛевоРасширеннаяПодсказка" id="236"/>
 					<ChildItems>
 						<Table name="ТаблицаДокументыНаОтправку" id="213">
 							<Representation>List</Representation>
 							<ReadOnly>true</ReadOnly>
-							<RowSelectionMode>Cell</RowSelectionMode>
-							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
@@ -116,7 +112,6 @@
 								<InputField name="ТаблицаДокументыНаОтправкуДокумент" id="226">
 									<DataPath>ДокументыНаОтправку.Документ</DataPath>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<OpenButton>true</OpenButton>
 									<ContextMenu name="ТаблицаДокументыНаОтправкуДокументКонтекстноеМеню" id="227"/>
 									<ExtendedTooltip name="ТаблицаДокументыНаОтправкуДокументРасширеннаяПодсказка" id="228"/>
@@ -130,14 +125,12 @@
 										</v8:item>
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ContextMenu name="ТаблицаДокументыНаОтправкуИдентификаторПакетаКонтекстноеМеню" id="242"/>
 									<ExtendedTooltip name="ТаблицаДокументыНаОтправкуИдентификаторПакетаРасширеннаяПодсказка" id="243"/>
 								</InputField>
 								<InputField name="ТаблицаДокументыНаОтправкуПолучатель" id="229">
 									<DataPath>ДокументыНаОтправку.Получатель</DataPath>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<OpenButton>true</OpenButton>
 									<ContextMenu name="ТаблицаДокументыНаОтправкуПолучательКонтекстноеМеню" id="230"/>
 									<ExtendedTooltip name="ТаблицаДокументыНаОтправкуПолучательРасширеннаяПодсказка" id="231"/>
@@ -145,7 +138,6 @@
 								<InputField name="ТаблицаДокументыНаОтправкуИдентификаторПолучателя" id="232">
 									<DataPath>ДокументыНаОтправку.ИдентификаторПолучателя</DataPath>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ContextMenu name="ТаблицаДокументыНаОтправкуИдентификаторПолучателяКонтекстноеМеню" id="233"/>
 									<ExtendedTooltip name="ТаблицаДокументыНаОтправкуИдентификаторПолучателяРасширеннаяПодсказка" id="234"/>
 								</InputField>
@@ -153,7 +145,6 @@
 									<DataPath>ДокументыНаОтправку.Шаблон</DataPath>
 									<Enabled>false</Enabled>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
 									<ContextMenu name="ТаблицаДокументыНаОтправкуШаблонКонтекстноеМеню" id="266"/>
 									<ExtendedTooltip name="ТаблицаДокументыНаОтправкуШаблонРасширеннаяПодсказка" id="267"/>
@@ -181,7 +172,6 @@
 							<v8:content>Группа право</v8:content>
 						</v8:item>
 					</ToolTip>
-					<Group>HorizontalIfPossible</Group>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаПравоРасширеннаяПодсказка" id="157"/>
@@ -199,7 +189,6 @@
 									<v8:content>Группа шаблоны пакетов</v8:content>
 								</v8:item>
 							</ToolTip>
-							<Group>HorizontalIfPossible</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаШаблоныПакетовРасширеннаяПодсказка" id="264"/>
@@ -295,8 +284,6 @@
 									<v8:content>Группа состав пакета</v8:content>
 								</v8:item>
 							</ToolTip>
-							<Group>HorizontalIfPossible</Group>
-							<Representation>WeakSeparation</Representation>
 							<ExtendedTooltip name="ГруппаСоставПакетаРасширеннаяПодсказка" id="155"/>
 							<ChildItems>
 								<Pages name="ГруппаСоставПакетаСтраницы" id="127">
@@ -329,13 +316,12 @@
 												</v8:item>
 											</ToolTip>
 											<Group>HorizontalIfPossible</Group>
-											<ScrollOnCompress>false</ScrollOnCompress>
 											<ExtendedTooltip name="ГруппаФормализованныеРасширеннаяПодсказка" id="126"/>
 											<ChildItems>
 												<Table name="ТаблицаФормализованных" id="129">
 													<Representation>List</Representation>
-													<RowSelectionMode>Cell</RowSelectionMode>
-													<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+													<HorizontalLines>false</HorizontalLines>
+													<VerticalLines>false</VerticalLines>
 													<AutoInsertNewRow>true</AutoInsertNewRow>
 													<EnableStartDrag>true</EnableStartDrag>
 													<EnableDrag>true</EnableDrag>
@@ -388,7 +374,6 @@
 															<DataPath>ТаблицаФормализованныхДляОтображения.Документ</DataPath>
 															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<OpenButton>true</OpenButton>
 															<ContextMenu name="ТаблицаФормализованныхДокументКонтекстноеМеню" id="146"/>
 															<ExtendedTooltip name="ТаблицаФормализованныхДокументРасширеннаяПодсказка" id="147"/>
@@ -397,7 +382,6 @@
 															<DataPath>ТаблицаФормализованныхДляОтображения.ИдентификаторДокумента</DataPath>
 															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ТаблицаФормализованныхИдентификаторКонтекстноеМеню" id="245"/>
 															<ExtendedTooltip name="ТаблицаФормализованныхИдентификаторРасширеннаяПодсказка" id="246"/>
 														</InputField>
@@ -411,7 +395,6 @@
 																</v8:item>
 															</Title>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ТаблицаФормализованныхФорматКонтекстноеМеню" id="149"/>
 															<ExtendedTooltip name="ТаблицаФормализованныхФорматРасширеннаяПодсказка" id="150"/>
 														</InputField>
@@ -420,7 +403,6 @@
 															<Visible>false</Visible>
 															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ТаблицаФормализованныхВерсияФорматаКонтекстноеМеню" id="152"/>
 															<ExtendedTooltip name="ТаблицаФормализованныхВерсияФорматаРасширеннаяПодсказка" id="153"/>
 														</InputField>
@@ -442,15 +424,14 @@
 												</v8:item>
 											</ToolTip>
 											<Group>HorizontalIfPossible</Group>
-											<ScrollOnCompress>false</ScrollOnCompress>
 											<ExtendedTooltip name="ГруппаНеформализованныеРасширеннаяПодсказка" id="122"/>
 											<ChildItems>
 												<Table name="ТаблицаНеформализованных" id="27">
 													<Representation>List</Representation>
 													<AutoMaxHeight>false</AutoMaxHeight>
 													<MultipleChoice>true</MultipleChoice>
-													<RowSelectionMode>Cell</RowSelectionMode>
-													<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+													<HorizontalLines>false</HorizontalLines>
+													<VerticalLines>false</VerticalLines>
 													<AutoInsertNewRow>true</AutoInsertNewRow>
 													<EnableStartDrag>true</EnableStartDrag>
 													<EnableDrag>true</EnableDrag>
@@ -500,7 +481,6 @@
 														<InputField name="ТаблицаНеформализованныхДокумент" id="85">
 															<DataPath>ТаблицаНеформализованныхДляОтображения.Документ</DataPath>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<OpenButton>true</OpenButton>
 															<ContextMenu name="ТаблицаНеформализованныхДокументКонтекстноеМеню" id="86"/>
 															<ExtendedTooltip name="ТаблицаНеформализованныхДокументРасширеннаяПодсказка" id="87"/>
@@ -508,7 +488,6 @@
 														<InputField name="ТаблицаНеформализованныхИдентификатор" id="247">
 															<DataPath>ТаблицаНеформализованныхДляОтображения.ИдентификаторДокумента</DataPath>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ТаблицаНеформализованныхИдентификаторКонтекстноеМеню" id="248"/>
 															<ExtendedTooltip name="ТаблицаНеформализованныхИдентификаторРасширеннаяПодсказка" id="249"/>
 														</InputField>
@@ -530,14 +509,12 @@
 																<InputField name="ТаблицаНеформализованныхПредставлениеПечатнойФормы" id="97">
 																	<DataPath>ТаблицаНеформализованныхДляОтображения.ПредставлениеПечатнойФормы</DataPath>
 																	<EditMode>EnterOnInput</EditMode>
-																	<AutoEditMode>true</AutoEditMode>
 																	<ContextMenu name="ТаблицаНеформализованныхПредставлениеПечатнойФормыКонтекстноеМеню" id="98"/>
 																	<ExtendedTooltip name="ТаблицаНеформализованныхПредставлениеПечатнойФормыРасширеннаяПодсказка" id="99"/>
 																</InputField>
 																<InputField name="ТаблицаНеформализованныхФорматФайла" id="88">
 																	<DataPath>ТаблицаНеформализованныхДляОтображения.ФорматФайла</DataPath>
 																	<EditMode>EnterOnInput</EditMode>
-																	<AutoEditMode>true</AutoEditMode>
 																	<ContextMenu name="ТаблицаНеформализованныхФорматФайлаКонтекстноеМеню" id="89"/>
 																	<ExtendedTooltip name="ТаблицаНеформализованныхФорматФайлаРасширеннаяПодсказка" id="90"/>
 																</InputField>
@@ -577,14 +554,12 @@
 																		<InputField name="ТаблицаНеформализованныхНомер" id="112">
 																			<DataPath>ТаблицаНеформализованныхДляОтображения.Номер</DataPath>
 																			<EditMode>EnterOnInput</EditMode>
-																			<AutoEditMode>true</AutoEditMode>
 																			<ContextMenu name="ТаблицаНеформализованныхНомерКонтекстноеМеню" id="113"/>
 																			<ExtendedTooltip name="ТаблицаНеформализованныхНомерРасширеннаяПодсказка" id="114"/>
 																		</InputField>
 																		<InputField name="ТаблицаНеформализованныхДата" id="115">
 																			<DataPath>ТаблицаНеформализованныхДляОтображения.Дата</DataPath>
 																			<EditMode>EnterOnInput</EditMode>
-																			<AutoEditMode>true</AutoEditMode>
 																			<ContextMenu name="ТаблицаНеформализованныхДатаКонтекстноеМеню" id="116"/>
 																			<ExtendedTooltip name="ТаблицаНеформализованныхДатаРасширеннаяПодсказка" id="117"/>
 																		</InputField>
@@ -608,7 +583,6 @@
 																		<InputField name="ТаблицаНеформализованныхВидДокумента" id="118">
 																			<DataPath>ТаблицаНеформализованныхДляОтображения.ВидДокумента</DataPath>
 																			<EditMode>EnterOnInput</EditMode>
-																			<AutoEditMode>true</AutoEditMode>
 																			<ListChoiceMode>true</ListChoiceMode>
 																			<ChoiceList>
 																				<xr:Item>
@@ -709,7 +683,6 @@
 																		<InputField name="ТаблицаНеформализованныхЗаголовок" id="109">
 																			<DataPath>ТаблицаНеформализованныхДляОтображения.Заголовок</DataPath>
 																			<EditMode>EnterOnInput</EditMode>
-																			<AutoEditMode>true</AutoEditMode>
 																			<ContextMenu name="ТаблицаНеформализованныхЗаголовокКонтекстноеМеню" id="110"/>
 																			<ExtendedTooltip name="ТаблицаНеформализованныхЗаголовокРасширеннаяПодсказка" id="111"/>
 																		</InputField>
@@ -721,7 +694,6 @@
 															<DataPath>ТаблицаНеформализованныхДляОтображения.ИмяМенеджераПечати</DataPath>
 															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ТаблицаНеформализованныхИмяМенеджераПечатиКонтекстноеМеню" id="92"/>
 															<ExtendedTooltip name="ТаблицаНеформализованныхИмяМенеджераПечатиРасширеннаяПодсказка" id="93"/>
 														</InputField>
@@ -729,7 +701,6 @@
 															<DataPath>ТаблицаНеформализованныхДляОтображения.ИмяМакета</DataPath>
 															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ТаблицаНеформализованныхИмяМакетаКонтекстноеМеню" id="95"/>
 															<ExtendedTooltip name="ТаблицаНеформализованныхИмяМакетаРасширеннаяПодсказка" id="96"/>
 														</InputField>
@@ -750,14 +721,12 @@
 													<v8:content>Группа неформализованные из файла</v8:content>
 												</v8:item>
 											</ToolTip>
-											<Group>Vertical</Group>
-											<ScrollOnCompress>false</ScrollOnCompress>
 											<ExtendedTooltip name="ГруппаНеформализованныеИзФайлаРасширеннаяПодсказка" id="167"/>
 											<ChildItems>
 												<Table name="ФайлыНаОтправку" id="168">
 													<Representation>List</Representation>
-													<RowSelectionMode>Cell</RowSelectionMode>
-													<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+													<HorizontalLines>false</HorizontalLines>
+													<VerticalLines>false</VerticalLines>
 													<AutoInsertNewRow>true</AutoInsertNewRow>
 													<EnableStartDrag>true</EnableStartDrag>
 													<EnableDrag>true</EnableDrag>
@@ -813,7 +782,6 @@
 															<DataPath>ТаблицаНеформализованныхИзФайловДляОтображения.ПутьКФайлу</DataPath>
 															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ФайлыНаОтправкуПутьКФайлуКонтекстноеМеню" id="199"/>
 															<ExtendedTooltip name="ФайлыНаОтправкуПутьКФайлуРасширеннаяПодсказка" id="200"/>
 														</InputField>
@@ -821,35 +789,30 @@
 															<DataPath>ТаблицаНеформализованныхИзФайловДляОтображения.ИдентификаторДокумента</DataPath>
 															<ReadOnly>true</ReadOnly>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ФайлыНаОтправкуИдентификаторКонтекстноеМеню" id="251"/>
 															<ExtendedTooltip name="ФайлыНаОтправкуИдентификаторРасширеннаяПодсказка" id="252"/>
 														</InputField>
 														<InputField name="ФайлыНаОтправкуЗаголовок" id="201">
 															<DataPath>ТаблицаНеформализованныхИзФайловДляОтображения.Заголовок</DataPath>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ФайлыНаОтправкуЗаголовокКонтекстноеМеню" id="202"/>
 															<ExtendedTooltip name="ФайлыНаОтправкуЗаголовокРасширеннаяПодсказка" id="203"/>
 														</InputField>
 														<InputField name="ФайлыНаОтправкуНомер" id="204">
 															<DataPath>ТаблицаНеформализованныхИзФайловДляОтображения.Номер</DataPath>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ФайлыНаОтправкуНомерКонтекстноеМеню" id="205"/>
 															<ExtendedTooltip name="ФайлыНаОтправкуНомерРасширеннаяПодсказка" id="206"/>
 														</InputField>
 														<InputField name="ФайлыНаОтправкуДата" id="207">
 															<DataPath>ТаблицаНеформализованныхИзФайловДляОтображения.Дата</DataPath>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ContextMenu name="ФайлыНаОтправкуДатаКонтекстноеМеню" id="208"/>
 															<ExtendedTooltip name="ФайлыНаОтправкуДатаРасширеннаяПодсказка" id="209"/>
 														</InputField>
 														<InputField name="ФайлыНаОтправкуВидДокумента" id="210">
 															<DataPath>ТаблицаНеформализованныхИзФайловДляОтображения.ВидДокумента</DataPath>
 															<EditMode>EnterOnInput</EditMode>
-															<AutoEditMode>true</AutoEditMode>
 															<ListChoiceMode>true</ListChoiceMode>
 															<ChoiceList>
 																<xr:Item>

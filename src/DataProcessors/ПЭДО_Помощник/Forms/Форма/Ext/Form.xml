@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
@@ -39,7 +39,6 @@
 	</Events>
 	<ChildItems>
 		<UsualGroup name="ГруппаОтбор" id="9">
-			<Group>HorizontalIfPossible</Group>
 			<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="10"/>
 			<ChildItems>
 				<InputField name="ДатаНачала" id="11">
@@ -92,7 +91,6 @@
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаИтоги" id="23">
-			<Group>HorizontalIfPossible</Group>
 			<ExtendedTooltip name="ГруппаИтогиРасширеннаяПодсказка" id="24"/>
 			<ChildItems>
 				<LabelDecoration name="НадписьИтоги" id="25">
@@ -118,12 +116,13 @@
 							<v8:content>Очередь</v8:content>
 						</v8:item>
 					</Title>
-					<Group>Vertical</Group>
 					<ExtendedTooltip name="СтраницаОчередьРасширеннаяПодсказка" id="31"/>
 					<ChildItems>
 						<Table name="Очередь" id="32">
 							<CommandBarLocation>None</CommandBarLocation>
 							<Height>15</Height>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
 							<DataPath>Очередь</DataPath>
 							<SearchStringLocation>Top</SearchStringLocation>
 							<RowFilter xsi:nil="true"/>
@@ -241,12 +240,13 @@
 							<v8:content>Двойные отправки</v8:content>
 						</v8:item>
 					</Title>
-					<Group>Vertical</Group>
 					<ExtendedTooltip name="СтраницаДвойныеРасширеннаяПодсказка" id="64"/>
 					<ChildItems>
 						<Table name="Двойные" id="65">
 							<CommandBarLocation>None</CommandBarLocation>
 							<Height>15</Height>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
 							<DataPath>Двойные</DataPath>
 							<RowFilter xsi:nil="true"/>
 							<ContextMenu name="ДвойныеКонтекстноеМеню" id="66"/>
@@ -351,7 +351,6 @@
 							<v8:content>Протокол</v8:content>
 						</v8:item>
 					</Title>
-					<Group>Vertical</Group>
 					<ExtendedTooltip name="СтраницаЛогРасширеннаяПодсказка" id="94"/>
 					<ChildItems>
 						<InputField name="Лог" id="95">

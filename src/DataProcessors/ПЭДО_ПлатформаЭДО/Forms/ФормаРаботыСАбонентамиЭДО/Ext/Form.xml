@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
 			<v8:content>Поиск абонентов в системе ЭДО</v8:content>
 		</v8:item>
 	</Title>
-	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
-	<Group>Vertical</Group>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<HorizontalAlign>Right</HorizontalAlign>
 		<ChildItems>
@@ -100,7 +99,6 @@
 										</v8:item>
 									</ToolTip>
 									<Group>AlwaysHorizontal</Group>
-									<Representation>WeakSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаИнформацияОрганизацияРасширеннаяПодсказка" id="63"/>
 									<ChildItems>
@@ -141,7 +139,6 @@
 										</v8:item>
 									</ToolTip>
 									<Group>AlwaysHorizontal</Group>
-									<Representation>WeakSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаКнопкаПолучитьРасширеннаяПодсказка" id="65"/>
 									<ChildItems>
@@ -196,7 +193,6 @@
 									<v8:content>Группа выбор контрагента</v8:content>
 								</v8:item>
 							</ToolTip>
-							<Group>HorizontalIfPossible</Group>
 							<Representation>None</Representation>
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="ГруппаВыборКонтрагентаРасширеннаяПодсказка" id="105"/>
@@ -205,6 +201,8 @@
 									<ReadOnly>true</ReadOnly>
 									<SelectionMode>SingleRow</SelectionMode>
 									<RowSelectionMode>Row</RowSelectionMode>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
 									<EnableStartDrag>true</EnableStartDrag>
 									<DataPath>СписокКонтрагентов</DataPath>
 									<RowPictureDataPath>СписокКонтрагентов.DefaultPicture</RowPictureDataPath>
@@ -286,6 +284,7 @@
 										</LabelField>
 										<CheckBoxField name="СписокКонтрагентовОбособленноеПодразделение" id="143">
 											<DataPath>~СписокКонтрагентов.ОбособленноеПодразделение</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="СписокКонтрагентовОбособленноеПодразделениеКонтекстноеМеню" id="144"/>
 											<ExtendedTooltip name="СписокКонтрагентовОбособленноеПодразделениеРасширеннаяПодсказка" id="145"/>
 										</CheckBoxField>
@@ -360,7 +359,6 @@
 										</v8:item>
 									</ToolTip>
 									<Group>AlwaysHorizontal</Group>
-									<Representation>WeakSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаИнформацияКонтрагентаРасширеннаяПодсказка" id="33"/>
 									<ChildItems>
@@ -414,8 +412,6 @@
 											<v8:content>Группа кнопка поиска</v8:content>
 										</v8:item>
 									</ToolTip>
-									<Group>HorizontalIfPossible</Group>
-									<Representation>WeakSeparation</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаКнопкаПоискаРасширеннаяПодсказка" id="29"/>
 									<ChildItems>
@@ -474,8 +470,8 @@
 								<Table name="ИдентификаторыЭДО" id="7">
 									<Representation>List</Representation>
 									<ReadOnly>true</ReadOnly>
-									<RowSelectionMode>Cell</RowSelectionMode>
-									<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
 									<AutoInsertNewRow>true</AutoInsertNewRow>
 									<EnableStartDrag>true</EnableStartDrag>
 									<EnableDrag>true</EnableDrag>
@@ -518,28 +514,24 @@
 										<InputField name="ИдентификаторыЭДОКПП" id="158">
 											<DataPath>ИдентификаторыЭДО.КПП</DataPath>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ContextMenu name="ИдентификаторыЭДОКППКонтекстноеМеню" id="159"/>
 											<ExtendedTooltip name="ИдентификаторыЭДОКППРасширеннаяПодсказка" id="160"/>
 										</InputField>
 										<InputField name="ИдентификаторыЭДОИдентификатор" id="20">
 											<DataPath>ИдентификаторыЭДО.ИдентификаторКонтрагента</DataPath>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ContextMenu name="ИдентификаторыЭДОИдентификаторКонтекстноеМеню" id="21"/>
 											<ExtendedTooltip name="ИдентификаторыЭДОИдентификаторРасширеннаяПодсказка" id="22"/>
 										</InputField>
 										<InputField name="ИдентификаторыЭДООператор" id="23">
 											<DataPath>ИдентификаторыЭДО.Оператор</DataPath>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ContextMenu name="ИдентификаторыЭДООператорКонтекстноеМеню" id="24"/>
 											<ExtendedTooltip name="ИдентификаторыЭДООператорРасширеннаяПодсказка" id="25"/>
 										</InputField>
 										<InputField name="ИдентификаторыЭДОСтатусПриглашения" id="69">
 											<DataPath>ИдентификаторыЭДО.СтатусПриглашения</DataPath>
 											<EditMode>EnterOnInput</EditMode>
-											<AutoEditMode>true</AutoEditMode>
 											<ContextMenu name="ИдентификаторыЭДОСтатусПриглашенияКонтекстноеМеню" id="70"/>
 											<ExtendedTooltip name="ИдентификаторыЭДОСтатусПриглашенияРасширеннаяПодсказка" id="71"/>
 										</InputField>
@@ -627,7 +619,6 @@
 												</v8:item>
 											</ToolTip>
 											<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-											<Group>HorizontalIfPossible</Group>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="ОтправкаПриграшенияРасширеннаяПодсказка" id="78"/>

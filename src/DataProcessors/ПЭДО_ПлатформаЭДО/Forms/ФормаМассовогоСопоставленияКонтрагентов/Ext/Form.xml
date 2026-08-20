@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
 			<v8:content>Массовое заполнение идентификаторов абонентов</v8:content>
 		</v8:item>
 	</Title>
-	<WindowOpeningMode>LockOwner</WindowOpeningMode>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
-	<Group>Vertical</Group>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<HorizontalAlign>Right</HorizontalAlign>
 		<Autofill>false</Autofill>
@@ -32,7 +31,6 @@
 					<v8:content>Группа предупреждение</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Group>HorizontalIfPossible</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПредупреждениеРасширеннаяПодсказка" id="198"/>
@@ -102,6 +100,8 @@
 							<ReadOnly>true</ReadOnly>
 							<SelectionMode>SingleRow</SelectionMode>
 							<RowSelectionMode>Row</RowSelectionMode>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
 							<EnableStartDrag>true</EnableStartDrag>
 							<DataPath>СписокКонтрагентов</DataPath>
 							<RowPictureDataPath>СписокКонтрагентов.DefaultPicture</RowPictureDataPath>
@@ -183,6 +183,7 @@
 								</LabelField>
 								<CheckBoxField name="СписокКонтрагентовОбособленноеПодразделение" id="143">
 									<DataPath>~СписокКонтрагентов.ОбособленноеПодразделение</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="СписокКонтрагентовОбособленноеПодразделениеКонтекстноеМеню" id="144"/>
 									<ExtendedTooltip name="СписокКонтрагентовОбособленноеПодразделениеРасширеннаяПодсказка" id="145"/>
 								</CheckBoxField>
@@ -235,11 +236,9 @@
 						</LabelDecoration>
 						<Table name="ПриоритетИдентификаторов" id="160">
 							<Representation>List</Representation>
-							<RowSelectionMode>Cell</RowSelectionMode>
 							<Header>false</Header>
-							<HorizontalLinesBWA>false</HorizontalLinesBWA>
-							<VerticalLinesBWA>false</VerticalLinesBWA>
-							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<DataPath>ПриоритетИдентификаторов</DataPath>
 							<RowPictureDataPath>ПриоритетИдентификаторов.Picture</RowPictureDataPath>
@@ -311,7 +310,6 @@
 								<InputField name="ПриоритетИдентификаторовЗначение" id="173">
 									<DataPath>ПриоритетИдентификаторов.Value</DataPath>
 									<EditMode>EnterOnInput</EditMode>
-									<AutoEditMode>true</AutoEditMode>
 									<ContextMenu name="ПриоритетИдентификаторовЗначениеКонтекстноеМеню" id="174"/>
 									<ExtendedTooltip name="ПриоритетИдентификаторовЗначениеРасширеннаяПодсказка" id="175"/>
 								</InputField>
@@ -335,13 +333,13 @@
 				</v8:item>
 			</ToolTip>
 			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-			<Group>HorizontalIfPossible</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="188"/>
 			<ChildItems>
 				<CheckBoxField name="ФиксироватьИнформациюОбОшибкахВЖурналеРегистрации" id="191">
 					<DataPath>ФиксироватьИнформациюОбОшибкахВЖурналеРегистрации</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="ФиксироватьИнформациюОбОшибкахВЖурналеРегистрацииКонтекстноеМеню" id="192"/>
 					<ExtendedTooltip name="ФиксироватьИнформациюОбОшибкахВЖурналеРегистрацииРасширеннаяПодсказка" id="193"/>
 				</CheckBoxField>
