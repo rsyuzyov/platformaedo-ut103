@@ -96,7 +96,7 @@ powershell -ExecutionPolicy Bypass -File build\build.ps1 `
 
 ## Лицензия
 
-[MIT](LICENSE).
+[MIT](LICENSE). Атрибуция — [NOTICE](NOTICE).
 
 **Обработка вендора:** `DataProcessors/ПЭДО_ПлатформаЭДО` — продукт оператора ЭДО
 «Платформа ЭДО», включён в поставку и распространяется на условиях MIT **с разрешения вендора**.
