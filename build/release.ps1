@@ -79,6 +79,17 @@ function Find-Ibcmd {
     return (Join-Path $fallback.FullName 'bin\ibcmd.exe')
 }
 
+function Get-RepoSlug {
+    # ⚠️🔴 gh определяет репозиторий по ТЕКУЩЕМУ каталогу, а не по каталогу скрипта. Запуск
+    #    из другого репозитория (сессия агента, любой другой cwd) молча создаёт релиз ТАМ —
+    #    проверено, релиз уехал в соседний репозиторий. Слаг берём из origin и передаём явно.
+    $url = Invoke-GitOrThrow 'origin url' @('remote', 'get-url', 'origin')
+    if ($url -notmatch 'github\.com[:/](?<slug>[^/]+/[^/]+?)(\.git)?$') {
+        throw "не разобрал адрес origin ('$url') — без явного --repo релиз уйдёт в репозиторий текущего каталога"
+    }
+    return $Matches['slug']
+}
+
 function Get-LastReleaseTag {
     $text = (Invoke-Git -Arguments @('tag', '--list', 'v*', '--sort=-v:refname')).Text
     if (-not $text) { return $null }
@@ -90,7 +101,7 @@ function Get-LastReleaseTag {
 }
 
 function New-ReleaseNotes {
-    param([string] $Version, [string] $PrevTag, [string] $CfeName, [string] $Sha)
+    param([string] $Version, [string] $PrevTag, [string] $CfeName, [string] $Sha, [string] $Slug)
 
     $range = if ($PrevTag) { "$PrevTag..HEAD" } else { 'HEAD' }
     $log = (Invoke-Git -Arguments @('log', '--no-merges', '--pretty=format:- %s', $range)).Text
@@ -109,13 +120,13 @@ function New-ReleaseNotes {
     }
     [void]$sb.AppendLine()
     if ($PrevTag) {
-        [void]$sb.AppendLine("Полный список изменений: [$PrevTag...v$Version](https://github.com/rsyuzyov/platformaedo-ut103/compare/$PrevTag...v$Version)")
+        [void]$sb.AppendLine("Полный список изменений: [$PrevTag...v$Version](https://github.com/$Slug/compare/$PrevTag...v$Version)")
         [void]$sb.AppendLine()
     }
     [void]$sb.AppendLine('## Установка')
     [void]$sb.AppendLine()
     [void]$sb.AppendLine("Файл ``$CfeName`` — готовое расширение, ставится в базу без конфигуратора.")
-    [void]$sb.AppendLine('Требования и настройка (свойства объектов, отпечаток КЭП) — в [README](https://github.com/rsyuzyov/platformaedo-ut103#readme).')
+    [void]$sb.AppendLine("Требования и настройка (свойства объектов, отпечаток КЭП) — в [README](https://github.com/$Slug#readme).")
     [void]$sb.AppendLine()
     [void]$sb.AppendLine('SHA-256:')
     [void]$sb.AppendLine()
@@ -148,7 +159,9 @@ try {
     if ($local -ne $remote) {
         throw "локальная $Branch разошлась с origin/$Branch — сначала push/pull, иначе тег укажет не на то, что увидят получатели"
     }
+    $slug = Get-RepoSlug
     Write-Host "  HEAD = $($local.Substring(0,8)), совпадает с origin/$Branch"
+    Write-Host "  репозиторий: $slug"
 
     $version = Get-ExtensionVersion
     $tag = "v$version"
@@ -192,7 +205,7 @@ try {
         if (-not (Test-Path $NotesFile)) { throw "не найден файл заметок: $NotesFile" }
         $notes = Get-Content -Raw -Encoding UTF8 $NotesFile
     } else {
-        $notes = New-ReleaseNotes -Version $version -PrevTag $prevTag -CfeName $cfeName -Sha $sha
+        $notes = New-ReleaseNotes -Version $version -PrevTag $prevTag -CfeName $cfeName -Sha $sha -Slug $slug
     }
     $notesPath = Join-Path $Out "release-notes-$version.md"
     [IO.File]::WriteAllText($notesPath, $notes, [Text.UTF8Encoding]::new($false))
@@ -228,9 +241,9 @@ try {
         throw
     }
 
-    Write-Step "релиз на GitHub"
+    Write-Step "релиз на GitHub ($slug)"
     $ghArgs = @('release', 'create', $tag, $cfePath, $shaPath,
-        '--title', "ПлатформаЭДО $version", '--notes-file', $notesPath)
+        '--repo', $slug, '--title', "ПлатформаЭДО $version", '--notes-file', $notesPath)
     if ($Draft) { $ghArgs += '--draft' }
     # gh печатает ход загрузки в stderr — судим по коду возврата, как и с git.
     $prevPreference = $ErrorActionPreference
