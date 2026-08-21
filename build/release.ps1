@@ -24,15 +24,18 @@ $root = Split-Path -Parent $PSScriptRoot
 
 function Write-Step { param([string] $Text) Write-Host "==> $Text" }
 
+# ⚠️ Аргументы git передаются одним массивом, а не через ValueFromRemainingArguments:
+#    иначе короткие ключи вида -a (git tag -a) PowerShell принимает за сокращение имени
+#    параметра -Arguments и вызов рассыпается на биндинге, не дойдя до git.
 function Invoke-Git {
-    param([Parameter(ValueFromRemainingArguments = $true)] [string[]] $Arguments)
+    param([string[]] $Arguments)
     $output = & git -C $root @Arguments 2>&1
     return [pscustomobject]@{ Code = $LASTEXITCODE; Text = ($output -join "`n").Trim() }
 }
 
 function Invoke-GitOrThrow {
-    param([string] $Stage, [Parameter(ValueFromRemainingArguments = $true)] [string[]] $Arguments)
-    $result = Invoke-Git @Arguments
+    param([string] $Stage, [string[]] $Arguments)
+    $result = Invoke-Git -Arguments $Arguments
     # ${Stage}, а не $Stage: двоеточие сразу после имени PowerShell читает как имя диска.
     if ($result.Code -ne 0) { throw "${Stage}: git вернул $($result.Code)`n$($result.Text)" }
     return $result.Text
@@ -68,7 +71,7 @@ function Find-Ibcmd {
 }
 
 function Get-LastReleaseTag {
-    $text = (Invoke-Git tag --list 'v*' --sort=-v:refname).Text
+    $text = (Invoke-Git -Arguments @('tag', '--list', 'v*', '--sort=-v:refname')).Text
     if (-not $text) { return $null }
     foreach ($line in $text -split "`n") {
         $tag = $line.Trim()
@@ -81,7 +84,7 @@ function New-ReleaseNotes {
     param([string] $Version, [string] $PrevTag, [string] $CfeName, [string] $Sha)
 
     $range = if ($PrevTag) { "$PrevTag..HEAD" } else { 'HEAD' }
-    $log = (Invoke-Git log --no-merges --pretty=format:'- %s' $range).Text
+    $log = (Invoke-Git -Arguments @('log', '--no-merges', '--pretty=format:- %s', $range)).Text
     $lines = if ($log) { @($log -split "`n") } else { @() }
     if ($lines.Count -gt 30) {
         $lines = $lines[0..29] + @("- …и ещё $($lines.Count - 30) коммит(ов), см. историю")
@@ -120,19 +123,19 @@ try {
     $env:PYTHONIOENCODING = 'utf-8'
 
     Write-Step 'состояние рабочей копии'
-    $branch = Invoke-GitOrThrow 'текущая ветка' rev-parse --abbrev-ref HEAD
+    $branch = Invoke-GitOrThrow 'текущая ветка' @('rev-parse', '--abbrev-ref', 'HEAD')
     if ($branch -ne $Branch) {
         throw "релиз собирается из ветки '$Branch', а сейчас '$branch' (раздаём указатель на default-ветку — из feature-ветки релиз выпускать нельзя)"
     }
-    $dirty = (Invoke-Git status --porcelain).Text
+    $dirty = (Invoke-Git -Arguments @('status', '--porcelain')).Text
     if ($dirty) {
         throw "рабочая копия не чиста — собранный .cfe не будет соответствовать тегу:`n$dirty"
     }
 
     Write-Step 'синхронизация с origin'
-    Invoke-GitOrThrow 'fetch' fetch --tags --prune origin | Out-Null
-    $local = Invoke-GitOrThrow 'HEAD' rev-parse HEAD
-    $remote = Invoke-GitOrThrow 'origin' rev-parse "origin/$Branch"
+    Invoke-GitOrThrow 'fetch' @('fetch', '--tags', '--prune', 'origin') | Out-Null
+    $local = Invoke-GitOrThrow 'HEAD' @('rev-parse', 'HEAD')
+    $remote = Invoke-GitOrThrow 'origin' @('rev-parse', "origin/$Branch")
     if ($local -ne $remote) {
         throw "локальная $Branch разошлась с origin/$Branch — сначала push/pull, иначе тег укажет не на то, что увидят получатели"
     }
@@ -142,8 +145,8 @@ try {
     $tag = "v$version"
     Write-Step "версия расширения: $version (тег $tag)"
 
-    $existingLocal = (Invoke-Git rev-parse -q --verify "refs/tags/$tag").Code -eq 0
-    $existingRemote = (Invoke-GitOrThrow 'ls-remote' ls-remote --tags origin "refs/tags/$tag")
+    $existingLocal = (Invoke-Git -Arguments @('rev-parse', '-q', '--verify', "refs/tags/$tag")).Code -eq 0
+    $existingRemote = Invoke-GitOrThrow 'ls-remote' @('ls-remote', '--tags', 'origin', "refs/tags/$tag")
     if ($existingLocal -or $existingRemote) {
         throw "тег $tag уже существует — поднимите <Version> в src\Configuration.xml (4-й разряд = исправление, 3-й = изменение поведения)"
     }
@@ -201,12 +204,12 @@ try {
     }
 
     Write-Step "тег $tag"
-    Invoke-GitOrThrow 'tag' tag -a $tag -m "ПлатформаЭДО $version" | Out-Null
+    Invoke-GitOrThrow 'tag' @('tag', '-a', $tag, '-m', "ПлатформаЭДО $version") | Out-Null
     try {
-        Invoke-GitOrThrow 'push тега' push origin $tag | Out-Null
+        Invoke-GitOrThrow 'push тега' @('push', 'origin', $tag) | Out-Null
     } catch {
         # Иначе локальный тег останется и следующий прогон упрётся в «тег уже существует».
-        Invoke-Git tag -d $tag | Out-Null
+        Invoke-Git -Arguments @('tag', '-d', $tag) | Out-Null
         throw
     }
 
