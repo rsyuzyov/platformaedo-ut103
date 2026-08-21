@@ -29,7 +29,16 @@ function Write-Step { param([string] $Text) Write-Host "==> $Text" }
 #    параметра -Arguments и вызов рассыпается на биндинге, не дойдя до git.
 function Invoke-Git {
     param([string[]] $Arguments)
-    $output = & git -C $root @Arguments 2>&1
+    # ⚠️ git пишет в stderr и когда всё хорошо (push печатает туда прогресс). При
+    #    $ErrorActionPreference = 'Stop' PowerShell 5.1 превращает такую строку
+    #    в NativeCommandError и роняет скрипт на успешной команде — судить только по коду.
+    $prevPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        $output = & git -C $root @Arguments 2>&1
+    } finally {
+        $ErrorActionPreference = $prevPreference
+    }
     return [pscustomobject]@{ Code = $LASTEXITCODE; Text = ($output -join "`n").Trim() }
 }
 
@@ -208,8 +217,14 @@ try {
     try {
         Invoke-GitOrThrow 'push тега' @('push', 'origin', $tag) | Out-Null
     } catch {
-        # Иначе локальный тег останется и следующий прогон упрётся в «тег уже существует».
-        Invoke-Git -Arguments @('tag', '-d', $tag) | Out-Null
+        # Откатывать локальный тег можно, только если на origin его действительно нет:
+        # иначе снимаем свою единственную ссылку на уже опубликованный тег.
+        $onRemote = (Invoke-Git -Arguments @('ls-remote', '--tags', 'origin', "refs/tags/$tag")).Text
+        if ($onRemote) {
+            Write-Warning "тег $tag на origin уже есть — локальный оставлен, доделать релиз: gh release create $tag"
+        } else {
+            Invoke-Git -Arguments @('tag', '-d', $tag) | Out-Null
+        }
         throw
     }
 
@@ -217,7 +232,14 @@ try {
     $ghArgs = @('release', 'create', $tag, $cfePath, $shaPath,
         '--title', "ПлатформаЭДО $version", '--notes-file', $notesPath)
     if ($Draft) { $ghArgs += '--draft' }
-    & gh @ghArgs
+    # gh печатает ход загрузки в stderr — судим по коду возврата, как и с git.
+    $prevPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        & gh @ghArgs
+    } finally {
+        $ErrorActionPreference = $prevPreference
+    }
     if ($LASTEXITCODE -ne 0) {
         throw "gh release create вернул $LASTEXITCODE — тег $tag уже запушен, после починки достаточно повторить gh release create"
     }
