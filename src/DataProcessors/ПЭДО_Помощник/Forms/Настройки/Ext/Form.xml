@@ -138,9 +138,28 @@
 					<ContextMenu name="ДействующееОкноКонтекстноеМеню" id="23"/>
 					<ExtendedTooltip name="ДействующееОкноРасширеннаяПодсказка" id="24"/>
 				</LabelField>
+				<InputField name="ГотовыеСтатусыЗаказа" id="25">
+					<DataPath>ГотовыеСтатусыЗаказа</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статусы заказа, готовые к отправке</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Через запятую. Состав перечисления в базах разный — несуществующие имена игнорируются.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ГотовыеСтатусыЗаказаКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ГотовыеСтатусыЗаказаРасширеннаяПодсказка" id="27"/>
+				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаОператор" id="25">
+		<UsualGroup name="ГруппаОператор" id="28">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -150,9 +169,9 @@
 			<Group>Vertical</Group>
 			<Representation>WeakSeparation</Representation>
 			<ShowTitle>true</ShowTitle>
-			<ExtendedTooltip name="ГруппаОператорРасширеннаяПодсказка" id="26"/>
+			<ExtendedTooltip name="ГруппаОператорРасширеннаяПодсказка" id="29"/>
 			<ChildItems>
-				<InputField name="ОтпечатокПодписанта" id="27">
+				<InputField name="ОтпечатокПодписанта" id="30">
 					<DataPath>ОтпечатокПодписанта</DataPath>
 					<Title>
 						<v8:item>
@@ -169,10 +188,10 @@
 					<AutoMarkIncomplete>true</AutoMarkIncomplete>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<HorizontalStretch>true</HorizontalStretch>
-					<ContextMenu name="ОтпечатокПодписантаКонтекстноеМеню" id="28"/>
-					<ExtendedTooltip name="ОтпечатокПодписантаРасширеннаяПодсказка" id="29"/>
+					<ContextMenu name="ОтпечатокПодписантаКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ОтпечатокПодписантаРасширеннаяПодсказка" id="32"/>
 				</InputField>
-				<InputField name="Хост" id="30">
+				<InputField name="Хост" id="33">
 					<DataPath>Хост</DataPath>
 					<Title>
 						<v8:item>
@@ -186,10 +205,10 @@
 							<v8:content>Меняется только при переезде оператора.</v8:content>
 						</v8:item>
 					</ToolTip>
-					<ContextMenu name="ХостКонтекстноеМеню" id="31"/>
-					<ExtendedTooltip name="ХостРасширеннаяПодсказка" id="32"/>
+					<ContextMenu name="ХостКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ХостРасширеннаяПодсказка" id="35"/>
 				</InputField>
-				<InputField name="ПрочиеНашиАдресаЭДО" id="33">
+				<InputField name="ПрочиеНашиАдресаЭДО" id="36">
 					<DataPath>ПрочиеНашиАдресаЭДО</DataPath>
 					<Title>
 						<v8:item>
@@ -205,12 +224,62 @@
 					</ToolTip>
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<HorizontalStretch>true</HorizontalStretch>
-					<ContextMenu name="ПрочиеНашиАдресаЭДОКонтекстноеМеню" id="34"/>
-					<ExtendedTooltip name="ПрочиеНашиАдресаЭДОРасширеннаяПодсказка" id="35"/>
+					<ContextMenu name="ПрочиеНашиАдресаЭДОКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ПрочиеНашиАдресаЭДОРасширеннаяПодсказка" id="38"/>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<InputField name="СостояниеГотовности" id="36">
+		<UsualGroup name="ГруппаСлужебное" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Служебное</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаСлужебноеРасширеннаяПодсказка" id="40"/>
+			<ChildItems>
+				<InputField name="ГлубинаДнейСинхронизацииСтатусов" id="41">
+					<DataPath>ГлубинаДнейСинхронизацииСтатусов</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Окно синхронизации статусов, дней</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>На сколько дней назад PEDO-StatusSync опрашивает карточки оператора.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<SpinButton>true</SpinButton>
+					<ContextMenu name="ГлубинаДнейСинхронизацииСтатусовКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ГлубинаДнейСинхронизацииСтатусовРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="ТаймаутHTTPСек" id="44">
+					<DataPath>ТаймаутHTTPСек</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таймаут HTTP, секунд</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Здоровый ответ приходит за 0,2–0,3 с. Большой таймаут в аварию множится на ретраи.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<SpinButton>true</SpinButton>
+					<ContextMenu name="ТаймаутHTTPСекКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="ТаймаутHTTPСекРасширеннаяПодсказка" id="46"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="СостояниеГотовности" id="47">
 			<DataPath>СостояниеГотовности</DataPath>
 			<Title>
 				<v8:item>
@@ -223,18 +292,18 @@
 			<AutoMaxWidth>false</AutoMaxWidth>
 			<Height>6</Height>
 			<HorizontalStretch>true</HorizontalStretch>
-			<ContextMenu name="СостояниеГотовностиКонтекстноеМеню" id="37"/>
-			<ExtendedTooltip name="СостояниеГотовностиРасширеннаяПодсказка" id="38"/>
+			<ContextMenu name="СостояниеГотовностиКонтекстноеМеню" id="48"/>
+			<ExtendedTooltip name="СостояниеГотовностиРасширеннаяПодсказка" id="49"/>
 		</InputField>
 	</ChildItems>
 	<Attributes>
-		<Attribute name="Объект" id="39">
+		<Attribute name="Объект" id="50">
 			<Type>
 				<v8:Type>cfg:DataProcessorObject.ПЭДО_Помощник</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
-		<Attribute name="ДатаНачалаОтправки" id="40">
+		<Attribute name="ДатаНачалаОтправки" id="51">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -248,7 +317,7 @@
 				</v8:DateQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ГлубинаДнейОтправки" id="41">
+		<Attribute name="ГлубинаДнейОтправки" id="52">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -264,7 +333,7 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ЛимитДокументовЗаПрогон" id="42">
+		<Attribute name="ЛимитДокументовЗаПрогон" id="53">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -280,7 +349,7 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ДействующееОкно" id="43">
+		<Attribute name="ДействующееОкно" id="54">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -295,7 +364,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ОтпечатокПодписанта" id="44">
+		<Attribute name="ОтпечатокПодписанта" id="55">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -310,7 +379,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="Хост" id="45">
+		<Attribute name="Хост" id="56">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -325,7 +394,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПрочиеНашиАдресаЭДО" id="46">
+		<Attribute name="ПрочиеНашиАдресаЭДО" id="57">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -340,7 +409,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="СостояниеГотовности" id="47">
+		<Attribute name="СостояниеГотовности" id="58">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -355,9 +424,56 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ГотовыеСтатусыЗаказа" id="59">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готовые статусы заказа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ГлубинаДнейСинхронизацииСтатусов" id="60">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Глубина дней синхронизации статусов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаймаутHTTPСек" id="61">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таймаут HTTP сек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
-		<Command name="ЗаписатьНастройки" id="48">
+		<Command name="ЗаписатьНастройки" id="62">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -367,7 +483,7 @@
 			<Action>ЗаписатьНастройки</Action>
 			<Shortcut>Ctrl+S</Shortcut>
 		</Command>
-		<Command name="ПроверитьГотовность" id="49">
+		<Command name="ПроверитьГотовность" id="63">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -376,7 +492,7 @@
 			</Title>
 			<Action>ПроверитьГотовность</Action>
 		</Command>
-		<Command name="ЗавестиСвойства" id="50">
+		<Command name="ЗавестиСвойства" id="64">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -385,7 +501,7 @@
 			</Title>
 			<Action>ЗавестиСвойства</Action>
 		</Command>
-		<Command name="ПеренестиВОбщие" id="51">
+		<Command name="ПеренестиВОбщие" id="65">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
