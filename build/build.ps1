@@ -7,7 +7,7 @@ param(
     [string] $Src,                                  # каталог XML-исходников (по умолчанию ..\src)
     [string] $Out,                                  # куда положить .cfe (по умолчанию ..\PlatformaEDO.cfe)
     [string] $Name = 'ПлатформаЭДО',
-    [string] $Prefix = 'ПЭДО_',
+    [string] $Prefix = 'ЭДО_',
     [int]    $MinSizeKb = 200                                           # порог «сборка не пустая»
 )
 
