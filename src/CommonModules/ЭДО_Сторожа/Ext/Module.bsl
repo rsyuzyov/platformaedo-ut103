@@ -75,7 +75,7 @@
 					ТокенПолучен = ТекущаяУниверсальнаяДатаВМиллисекундах();
 					Заголовки.Вставить("Authorization", "Bearer " + Токен);
 				КонецЕсли;
-				Путь = "/document/public/api/v3/documents?created_from=" + ОтДата + "T00:00:00.000Z"
+				Путь = ЭДО_Сервер.ПутьСервиса("document") + "/public/api/v3/documents?created_from=" + ОтДата + "T00:00:00.000Z"
 					+ "&created_till=" + ОтДата + "T23:59:59.000Z&sender_id=" + НашГид
 					+ "&page=" + Страница + "&page_size=100";
 				Карточки = Неопределено;
@@ -267,7 +267,7 @@
 					ТокенПолучен = ТекущаяУниверсальнаяДатаВМиллисекундах();
 					Заголовки.Вставить("Authorization", "Bearer " + Токен);
 				КонецЕсли;
-				Путь = "/document/public/api/v3/documents?created_from=" + ОтДата + "T00:00:00.000Z"
+				Путь = ЭДО_Сервер.ПутьСервиса("document") + "/public/api/v3/documents?created_from=" + ОтДата + "T00:00:00.000Z"
 					+ "&created_till=" + ОтДата + "T23:59:59.000Z&sender_id=" + НашГид
 					+ "&page=" + Страница + "&page_size=100";
 				Карточки = Неопределено;
@@ -644,7 +644,7 @@
 				ОтМетка = Формат(День, "ДФ=yyyy-MM-dd") + "T00:00:00.000Z";
 				ДоМетка = Формат(День, "ДФ=yyyy-MM-dd") + "T23:59:59.999Z";
 				Для Страница = 0 По 9 Цикл
-					Путь = "/document/public/api/v3/documents?sender_id=" + НашGid
+					Путь = ЭДО_Сервер.ПутьСервиса("document") + "/public/api/v3/documents?sender_id=" + НашGid
 						+ "&created_from=" + ОтМетка + "&created_till=" + ДоМетка
 						+ "&page=" + Страница + "&page_size=100";
 					ОтветП = СоедП.Получить(Новый HTTPЗапрос(Путь, ЗаголовкиП));
