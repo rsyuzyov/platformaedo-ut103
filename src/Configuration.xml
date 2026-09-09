@@ -71,6 +71,7 @@
 			<CommonModule>ЭДО_АктСверкиДанные</CommonModule>
 			<CommonModule>ЭДО_Регламенты</CommonModule>
 			<CommonModule>ЭДО_Сторожа</CommonModule>
+			<CommonModule>ЭДО_Витрина</CommonModule>
 		<CommonModule>ЭлектронныеДокументыКлиент</CommonModule>
 		<CommonModule>ОбменСГИСЭПДКлиентПереопределяемый</CommonModule>
 		<CommonModule>ЭлектронныеДокументыПереопределяемый</CommonModule>
@@ -81,6 +82,7 @@
 			<DataProcessor>ЭДО_Помощник</DataProcessor>
 			<DataProcessor>ЭДО_ПлатформаЭДО</DataProcessor>
 			<DataProcessor>ЭДО_КарточкаДокумента</DataProcessor>
+			<DataProcessor>ЭДО_ЦентрУправления</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
