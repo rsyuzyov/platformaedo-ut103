@@ -158,6 +158,9 @@
 												<ContextMenu name="ТаблицаИтоговУправлениеПоискомКонтекстноеМеню" id="42"/>
 												<ExtendedTooltip name="ТаблицаИтоговУправлениеПоискомРасширеннаяПодсказка" id="43"/>
 											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ТаблицаИтоговВыбор</Event>
+											</Events>
 											<ChildItems>
 												<InputField name="ИтогГруппа" id="44">
 													<DataPath>ИтогиГрупп.Группа</DataPath>
@@ -199,9 +202,6 @@
 													<ExtendedTooltip name="ИтогСуммаРасширеннаяПодсказка" id="52"/>
 												</InputField>
 											</ChildItems>
-											<Events>
-												<Event name="Selection">ТаблицаИтоговВыбор</Event>
-											</Events>
 										</Table>
 									</ChildItems>
 								</UsualGroup>
@@ -322,6 +322,9 @@
 										<ContextMenu name="ТаблицаСостоянийУправлениеПоискомКонтекстноеМеню" id="87"/>
 										<ExtendedTooltip name="ТаблицаСостоянийУправлениеПоискомРасширеннаяПодсказка" id="88"/>
 									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">ТаблицаСостоянийВыбор</Event>
+									</Events>
 									<ChildItems>
 										<InputField name="СостГруппа" id="89">
 											<DataPath>Состояния.Группа</DataPath>
@@ -376,9 +379,6 @@
 											<ExtendedTooltip name="СостСуммаРасширеннаяПодсказка" id="100"/>
 										</InputField>
 									</ChildItems>
-									<Events>
-										<Event name="Selection">ТаблицаСостоянийВыбор</Event>
-									</Events>
 								</Table>
 							</ChildItems>
 						</UsualGroup>
@@ -435,6 +435,9 @@
 								<ContextMenu name="ТаблицаПризнаковУправлениеПоискомКонтекстноеМеню" id="117"/>
 								<ExtendedTooltip name="ТаблицаПризнаковУправлениеПоискомРасширеннаяПодсказка" id="118"/>
 							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ТаблицаПризнаковВыбор</Event>
+							</Events>
 							<ChildItems>
 								<InputField name="ПризнакИмя" id="119">
 									<DataPath>Контрагенты.Признак</DataPath>
@@ -463,9 +466,6 @@
 									<ExtendedTooltip name="ПризнакКоличествоРасширеннаяПодсказка" id="124"/>
 								</InputField>
 							</ChildItems>
-							<Events>
-								<Event name="Selection">ТаблицаПризнаковВыбор</Event>
-							</Events>
 						</Table>
 						<Table name="ТаблицаОрганизаций" id="125">
 							<DataPath>Организации</DataPath>
@@ -607,6 +607,9 @@
 								<ContextMenu name="ТаблицаДокументовУправлениеПоискомКонтекстноеМеню" id="166"/>
 								<ExtendedTooltip name="ТаблицаДокументовУправлениеПоискомРасширеннаяПодсказка" id="167"/>
 							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ТаблицаДокументовВыбор</Event>
+							</Events>
 							<ChildItems>
 								<InputField name="ДокДата" id="168">
 									<DataPath>Документы.Дата</DataPath>
@@ -687,9 +690,6 @@
 									<ExtendedTooltip name="ДокСостояниеРасширеннаяПодсказка" id="185"/>
 								</InputField>
 							</ChildItems>
-							<Events>
-								<Event name="Selection">ТаблицаДокументовВыбор</Event>
-							</Events>
 						</Table>
 						<Table name="ТаблицаСписокКА" id="186">
 							<DataPath>СписокКонтрагентов</DataPath>
@@ -722,6 +722,9 @@
 								<ContextMenu name="ТаблицаСписокКАУправлениеПоискомКонтекстноеМеню" id="197"/>
 								<ExtendedTooltip name="ТаблицаСписокКАУправлениеПоискомРасширеннаяПодсказка" id="198"/>
 							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ТаблицаСписокКАВыбор</Event>
+							</Events>
 							<ChildItems>
 								<InputField name="КаКонтрагент" id="199">
 									<DataPath>СписокКонтрагентов.Контрагент</DataPath>
@@ -802,9 +805,6 @@
 									<ExtendedTooltip name="КаПричинаПаузыРасширеннаяПодсказка" id="216"/>
 								</InputField>
 							</ChildItems>
-							<Events>
-								<Event name="Selection">ТаблицаСписокКАВыбор</Event>
-							</Events>
 						</Table>
 					</ChildItems>
 				</Page>
@@ -1061,7 +1061,7 @@
 			<Columns>
 				<Column name="Организация" id="240">
 					<Type>
-						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+						<v8:TypeId>d50cda16-e4a5-56b9-8e17-fc38ffb83da0</v8:TypeId>
 					</Type>
 				</Column>
 				<Column name="ИНН" id="241">
@@ -1103,7 +1103,7 @@
 			<Columns>
 				<Column name="Документ" id="245">
 					<Type>
-						<v8:Type>cfg:DocumentRef.РеализацияТоваровУслуг</v8:Type>
+						<v8:TypeId>eddd79d8-809c-497f-9c4a-5943afddda98</v8:TypeId>
 					</Type>
 				</Column>
 				<Column name="Дата" id="246">
@@ -1125,12 +1125,12 @@
 				</Column>
 				<Column name="Контрагент" id="248">
 					<Type>
-						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+						<v8:TypeId>818be37a-c184-545b-aad6-991049f50ebf</v8:TypeId>
 					</Type>
 				</Column>
 				<Column name="Организация" id="249">
 					<Type>
-						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+						<v8:TypeId>d50cda16-e4a5-56b9-8e17-fc38ffb83da0</v8:TypeId>
 					</Type>
 				</Column>
 				<Column name="Сумма" id="250">
@@ -1167,7 +1167,7 @@
 			<Columns>
 				<Column name="Контрагент" id="253">
 					<Type>
-						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+						<v8:TypeId>818be37a-c184-545b-aad6-991049f50ebf</v8:TypeId>
 					</Type>
 				</Column>
 				<Column name="Документов" id="254">
