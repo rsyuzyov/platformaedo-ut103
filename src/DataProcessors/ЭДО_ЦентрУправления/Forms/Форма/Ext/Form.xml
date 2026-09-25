@@ -219,7 +219,7 @@
 										<Table name="ТаблицаКонтура" id="55">
 											<DataPath>Контур</DataPath>
 											<CommandBarLocation>None</CommandBarLocation>
-											<Height>7</Height>
+											<Height>9</Height>
 											<ContextMenu name="ТаблицаКонтураКонтекстноеМеню" id="56"/>
 											<AutoCommandBar name="ТаблицаКонтураКоманднаяПанель" id="57"/>
 											<ExtendedTooltip name="ТаблицаКонтураРасширеннаяПодсказка" id="58"/>
@@ -247,6 +247,9 @@
 												<ContextMenu name="ТаблицаКонтураУправлениеПоискомКонтекстноеМеню" id="66"/>
 												<ExtendedTooltip name="ТаблицаКонтураУправлениеПоискомРасширеннаяПодсказка" id="67"/>
 											</SearchControlAddition>
+											<Events>
+												<Event name="Selection">ТаблицаКонтураВыбор</Event>
+											</Events>
 											<ChildItems>
 												<InputField name="КонтурПоказатель" id="68">
 													<DataPath>Контур.Показатель</DataPath>
@@ -708,6 +711,48 @@
 									<ContextMenu name="ДокСостояниеКонтекстноеМеню" id="184"/>
 									<ExtendedTooltip name="ДокСостояниеРасширеннаяПодсказка" id="185"/>
 								</InputField>
+								<InputField name="ДокОтправленоНа" id="300">
+									<DataPath>Документы.ОтправленоНа</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ушли на адрес</v8:content>
+										</v8:item>
+									</Title>
+									<Visible>false</Visible>
+									<ReadOnly>true</ReadOnly>
+									<Width>30</Width>
+									<ContextMenu name="ДокОтправленоНаКонтекстноеМеню" id="301"/>
+									<ExtendedTooltip name="ДокОтправленоНаРасширеннаяПодсказка" id="302"/>
+								</InputField>
+								<InputField name="ДокТекущийАдрес" id="303">
+									<DataPath>Документы.ТекущийАдрес</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Текущий адрес</v8:content>
+										</v8:item>
+									</Title>
+									<Visible>false</Visible>
+									<ReadOnly>true</ReadOnly>
+									<Width>30</Width>
+									<ContextMenu name="ДокТекущийАдресКонтекстноеМеню" id="304"/>
+									<ExtendedTooltip name="ДокТекущийАдресРасширеннаяПодсказка" id="305"/>
+								</InputField>
+								<InputField name="ДокСтатусОператора" id="306">
+									<DataPath>Документы.СтатусОператора</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Статус у оператора</v8:content>
+										</v8:item>
+									</Title>
+									<Visible>false</Visible>
+									<ReadOnly>true</ReadOnly>
+									<Width>12</Width>
+									<ContextMenu name="ДокСтатусОператораКонтекстноеМеню" id="307"/>
+									<ExtendedTooltip name="ДокСтатусОператораРасширеннаяПодсказка" id="308"/>
+								</InputField>
 								<InputField name="ДокИдОператора" id="272">
 									<DataPath>Документы.ИдОператора</DataPath>
 									<Title>
@@ -873,6 +918,20 @@
 									<Width>16</Width>
 									<ContextMenu name="КаСтатусСвязиКонтекстноеМеню" id="212"/>
 									<ExtendedTooltip name="КаСтатусСвязиРасширеннаяПодсказка" id="213"/>
+								</InputField>
+								<InputField name="КаНетАдреса" id="309">
+									<DataPath>СписокКонтрагентов.НетАдреса</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Чего нет</v8:content>
+										</v8:item>
+									</Title>
+									<Visible>false</Visible>
+									<ReadOnly>true</ReadOnly>
+									<Width>30</Width>
+									<ContextMenu name="КаНетАдресаКонтекстноеМеню" id="310"/>
+									<ExtendedTooltip name="КаНетАдресаРасширеннаяПодсказка" id="311"/>
 								</InputField>
 								<InputField name="КаПричинаПаузы" id="214">
 									<DataPath>СписокКонтрагентов.ПричинаПаузы</DataPath>
@@ -1097,6 +1156,15 @@
 						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
+				<Column name="Расшифровка" id="320">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="Контрагенты" id="236">
@@ -1186,7 +1254,7 @@
 			<Columns>
 				<Column name="Документ" id="245">
 					<Type>
-						<v8:TypeId>eddd79d8-809c-497f-9c4a-5943afddda98</v8:TypeId>
+						<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
 					</Type>
 				</Column>
 				<Column name="Дата" id="246">
@@ -1259,6 +1327,33 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="ОтправленоНа" id="321">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ТекущийАдрес" id="322">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтатусОператора" id="323">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="СписокКонтрагентов" id="252">
@@ -1320,6 +1415,15 @@
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
 							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НетАдреса" id="324">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
 					</Type>
