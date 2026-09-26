@@ -711,6 +711,20 @@
 									<ContextMenu name="ДокСостояниеКонтекстноеМеню" id="184"/>
 									<ExtendedTooltip name="ДокСостояниеРасширеннаяПодсказка" id="185"/>
 								</InputField>
+								<InputField name="ДокДатаПОА" id="325">
+									<DataPath>Документы.ДатаПОА</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата ПОА</v8:content>
+										</v8:item>
+									</Title>
+									<Visible>false</Visible>
+									<ReadOnly>true</ReadOnly>
+									<Width>12</Width>
+									<ContextMenu name="ДокДатаПОАКонтекстноеМеню" id="326"/>
+									<ExtendedTooltip name="ДокДатаПОАРасширеннаяПодсказка" id="327"/>
+								</InputField>
 								<InputField name="ДокОтправленоНа" id="300">
 									<DataPath>Документы.ОтправленоНа</DataPath>
 									<Title>
@@ -1352,6 +1366,14 @@
 							<v8:Length>20</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДатаПОА" id="325">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
 					</Type>
 				</Column>
 			</Columns>
