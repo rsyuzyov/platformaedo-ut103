@@ -75,7 +75,7 @@
 				<xs:element minOccurs="0" name="ХранениеИнформации1С">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element minOccurs="0" name="ЭДО_КодСостояния">
+							<xs:element minOccurs="0" name="ОФД_ЭДО_СтатусДокумента">
 								<xs:sequence>
 									<xs:element minOccurs="0" name="НаборыСвойств">
 										<xs:complexType>
@@ -96,7 +96,7 @@
 									<xs:attribute name="Тип" type="xs:string" use="optional" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element minOccurs="0" name="ЭДО_ИдентификаторДокумента">
+							<xs:element minOccurs="0" name="ОФД_ЭДО_ИдентификаторДокумента">
 								<xs:sequence>
 									<xs:element minOccurs="0" name="НаборыСвойств">
 										<xs:complexType>
@@ -117,7 +117,7 @@
 									<xs:attribute name="Тип" type="xs:string" use="optional" />
 								</xs:complexType>
 							</xs:element>
-							<xs:element minOccurs="0" name="ЭДО_АдресКонтрагента">
+							<xs:element minOccurs="0" name="ОФД_ЭДО_ИдентификаторУчастникаЭДО">
 								<xs:sequence>
 									<xs:element minOccurs="0" name="НаборыСвойств">
 										<xs:complexType>

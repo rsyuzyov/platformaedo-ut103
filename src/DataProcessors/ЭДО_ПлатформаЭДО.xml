@@ -1,31 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
-	<DataProcessor uuid="195e6753-bab3-5aa0-841a-e608ad552fba">
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<ExternalDataProcessor uuid="dd5a5b69-b3d4-4731-94a0-f03564a61a51">
 		<InternalInfo>
-			<xr:GeneratedType name="DataProcessorObject.ЭДО_ПлатформаЭДО" category="Object">
-				<xr:TypeId>ed3c807f-00b9-588e-94b4-b1153d271fd5</xr:TypeId>
-				<xr:ValueId>bb514942-61ff-5666-811a-8c723f6b4390</xr:ValueId>
-			</xr:GeneratedType>
-			<xr:GeneratedType name="DataProcessorManager.ЭДО_ПлатформаЭДО" category="Manager">
-				<xr:TypeId>50b3467b-15be-53e3-b87b-4ab2aa2a3417</xr:TypeId>
-				<xr:ValueId>473d0f32-1f1c-50e5-b7f0-31627effd4ee</xr:ValueId>
+			<xr:ContainedObject>
+				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
+				<xr:ObjectId>fa01b045-842b-44ed-adb6-9a4a662c1131</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:GeneratedType name="ExternalDataProcessorObject.ОФД_ЭДО" category="Object">
+				<xr:TypeId>d21931e8-201c-4d5e-993b-9aeea05f9583</xr:TypeId>
+				<xr:ValueId>585adbbe-8734-4303-84fc-138d5d1cae4e</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ЭДО_ПлатформаЭДО</Name>
+			<Name>ОФД_ЭДО</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Платформа ЭДО (Эвотор ОФД)</v8:content>
+					<v8:content>ОФД ЭДО</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<UseStandardCommands>true</UseStandardCommands>
-			<DefaultForm>DataProcessor.ЭДО_ПлатформаЭДО.Form.ГлавноеОкно</DefaultForm>
+			<DefaultForm>ExternalDataProcessor.ОФД_ЭДО.Form.ГлавноеОкно</DefaultForm>
 			<AuxiliaryForm/>
-			<IncludeHelpInContents>false</IncludeHelpInContents>
-			<ExtendedPresentation/>
-			<Explanation/>
 		</Properties>
 		<ChildObjects>
 			<Attribute uuid="ce2cf926-4eb7-43c0-907e-eff2c8d127f7">
@@ -90,5 +86,5 @@
 			<Template>СлужебныеДанные</Template>
 			<Template>СкриптОтображенияФормыАвторизации</Template>
 		</ChildObjects>
-	</DataProcessor>
+	</ExternalDataProcessor>
 </MetaDataObject>

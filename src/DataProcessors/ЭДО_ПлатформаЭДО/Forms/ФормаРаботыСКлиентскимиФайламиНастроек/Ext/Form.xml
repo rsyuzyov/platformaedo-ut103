@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.17">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<WindowOpeningMode>DontBlock</WindowOpeningMode>
 	<AutoTitle>false</AutoTitle>
+	<Group>Vertical</Group>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
@@ -21,6 +23,7 @@
 					<v8:content>Группа элементы управления</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Group>HorizontalIfPossible</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаЭлементыУправленияРасширеннаяПодсказка" id="24"/>
@@ -41,8 +44,8 @@
 		</UsualGroup>
 		<Table name="КлиентскиеНастройки" id="1">
 			<Representation>List</Representation>
-			<HorizontalLines>false</HorizontalLines>
-			<VerticalLines>false</VerticalLines>
+			<RowSelectionMode>Cell</RowSelectionMode>
+			<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
@@ -90,7 +93,7 @@
 						</v8:item>
 					</Title>
 					<EditMode>EnterOnInput</EditMode>
-					<CheckBoxType>Auto</CheckBoxType>
+					<AutoEditMode>true</AutoEditMode>
 					<ContextMenu name="КлиентскиеНастройкиПрименятьНастройкуКонтекстноеМеню" id="30"/>
 					<ExtendedTooltip name="КлиентскиеНастройкиПрименятьНастройкуРасширеннаяПодсказка" id="31"/>
 					<Events>
@@ -100,6 +103,7 @@
 				<InputField name="КлиентскиеНастройкиИмяНастройки" id="39">
 					<DataPath>КлиентскиеНастройки.ИмяНастройки</DataPath>
 					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
 					<ContextMenu name="КлиентскиеНастройкиИмяНастройкиКонтекстноеМеню" id="40"/>
 					<ExtendedTooltip name="КлиентскиеНастройкиИмяНастройкиРасширеннаяПодсказка" id="41"/>
 					<Events>
@@ -110,6 +114,7 @@
 					<DataPath>КлиентскиеНастройки.ИмяФайлаНастройки</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
 					<ContextMenu name="КлиентскиеНастройкиИмяФайлаНастройкиКонтекстноеМеню" id="15"/>
 					<ExtendedTooltip name="КлиентскиеНастройкиИмяФайлаНастройкиРасширеннаяПодсказка" id="16"/>
 				</InputField>
@@ -117,6 +122,7 @@
 					<DataPath>КлиентскиеНастройки.ОбъектНастройки</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
 					<ContextMenu name="КлиентскиеНастройкиОбъектНастройкиКонтекстноеМеню" id="18"/>
 					<ExtendedTooltip name="КлиентскиеНастройкиОбъектНастройкиРасширеннаяПодсказка" id="19"/>
 				</InputField>
@@ -124,6 +130,7 @@
 					<DataPath>КлиентскиеНастройки.ФорматВыгрузки</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
 					<ContextMenu name="КлиентскиеНастройкиФорматВыгрузкиКонтекстноеМеню" id="21"/>
 					<ExtendedTooltip name="КлиентскиеНастройкиФорматВыгрузкиРасширеннаяПодсказка" id="22"/>
 				</InputField>
@@ -131,6 +138,7 @@
 					<DataPath>КлиентскиеНастройки.ТекстНастройки</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<EditMode>EnterOnInput</EditMode>
+					<AutoEditMode>true</AutoEditMode>
 					<ContextMenu name="КлиентскиеНастройкиТекстНастройкиКонтекстноеМеню" id="33"/>
 					<ExtendedTooltip name="КлиентскиеНастройкиТекстНастройкиРасширеннаяПодсказка" id="34"/>
 				</InputField>
@@ -201,6 +209,7 @@
 				</v8:item>
 			</ToolTip>
 			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<Group>HorizontalIfPossible</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="36"/>
@@ -218,7 +227,7 @@
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
-				<v8:Type>cfg:DataProcessorObject.ЭДО_ПлатформаЭДО</v8:Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ОФД_ЭДО</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
