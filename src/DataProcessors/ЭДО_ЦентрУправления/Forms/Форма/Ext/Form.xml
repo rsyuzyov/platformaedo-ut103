@@ -37,6 +37,11 @@
 				<CommandName>Form.Command.СнятьПаузу</CommandName>
 				<ExtendedTooltip name="КнопкаСнятьПаузуРасширеннаяПодсказка" id="8"/>
 			</Button>
+			<Button name="КнопкаНастройкиЭДО" id="910">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.НастройкиЭДО</CommandName>
+				<ExtendedTooltip name="КнопкаНастройкиЭДОРасширеннаяПодсказка" id="911"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -1134,13 +1139,26 @@
 									<ContextMenu name="ВхОрганизацияКонтекстноеМеню" id="855"/>
 									<ExtendedTooltip name="ВхОрганизацияРасширеннаяПодсказка" id="856"/>
 								</InputField>
+								<InputField name="ВхСостояниеЭДО" id="924">
+									<DataPath>Входящие.СостояниеЭДО</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состояние</v8:content>
+										</v8:item>
+									</Title>
+									<Width>22</Width>
+									<ContextMenu name="ВхСостояниеЭДОКонтекстноеМеню" id="925"/>
+									<ExtendedTooltip name="ВхСостояниеЭДОРасширеннаяПодсказка" id="926"/>
+								</InputField>
 								<InputField name="ВхСтатус" id="857">
 									<DataPath>Входящие.Статус</DataPath>
 									<ReadOnly>true</ReadOnly>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>У оператора</v8:content>
+											<v8:content>Код API</v8:content>
 										</v8:item>
 									</Title>
 									<Width>12</Width>
@@ -1334,6 +1352,25 @@
 									<ContextMenu name="ДокСуммаКонтекстноеМеню" id="181"/>
 									<ExtendedTooltip name="ДокСуммаРасширеннаяПодсказка" id="182"/>
 								</InputField>
+								<InputField name="ДокСуммаВЭДО" id="916">
+									<DataPath>Документы.СуммаВЭДО</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма в ЭДО</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма с НДС, с которой документ ушел контрагенту (по карточке Платформы). Красным - документ изменен после отправки.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>14</Width>
+									<ContextMenu name="ДокСуммаВЭДОКонтекстноеМеню" id="917"/>
+									<ExtendedTooltip name="ДокСуммаВЭДОРасширеннаяПодсказка" id="918"/>
+								</InputField>
 								<InputField name="ДокСостояние" id="183">
 									<DataPath>Документы.Состояние</DataPath>
 									<Title>
@@ -1346,6 +1383,25 @@
 									<Width>30</Width>
 									<ContextMenu name="ДокСостояниеКонтекстноеМеню" id="184"/>
 									<ExtendedTooltip name="ДокСостояниеРасширеннаяПодсказка" id="185"/>
+								</InputField>
+								<InputField name="ДокЧестныйЗнак" id="919">
+									<DataPath>Документы.ЧестныйЗнак</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Честный знак</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Фиксация документа в Честном знаке - отдельно от подписи: документ может быть подписан, а фиксация упасть.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>24</Width>
+									<ContextMenu name="ДокЧестныйЗнакКонтекстноеМеню" id="920"/>
+									<ExtendedTooltip name="ДокЧестныйЗнакРасширеннаяПодсказка" id="921"/>
 								</InputField>
 								<InputField name="ДокДатаПОА" id="325">
 									<DataPath>Документы.ДатаПОА</DataPath>
@@ -1986,6 +2042,30 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="СуммаВЭДО" id="913">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаРасходится" id="914">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЧестныйЗнак" id="915">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 				<Column name="ИдОператора" id="272">
 					<Title>
 						<v8:item>
@@ -2496,6 +2576,15 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="СостояниеЭДО" id="923">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ВходящиеВсе" id="880">
@@ -2590,6 +2679,15 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="СостояниеЭДО" id="922">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 	</Attributes>
@@ -2650,6 +2748,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ОбменСейчасВыполнить</Action>
+		</Command>
+		<Command name="НастройкиЭДО" id="912">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки ЭДО</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Флаги ЭДО контрагентов: автоприемка, автоотправка, пауза. Без права изменения - только просмотр</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкиЭДОВыполнить</Action>
 		</Command>
 		<Command name="ОтправитьВыделенные" id="267">
 			<Title>

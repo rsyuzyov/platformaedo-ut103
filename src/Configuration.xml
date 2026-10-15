@@ -50,7 +50,7 @@
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
 			<Vendor>ontab</Vendor>
-			<Version>1.5.44.0</Version>
+			<Version>1.5.45.0</Version>
 			<DefaultLanguage>Language.Русский</DefaultLanguage>
 			<BriefInformation>
 				<v8:item>
@@ -72,6 +72,7 @@
 			<CommonModule>ЭДО_Регламенты</CommonModule>
 			<CommonModule>ЭДО_Сторожа</CommonModule>
 			<CommonModule>ЭДО_Витрина</CommonModule>
+			<CommonModule>ЭДО_НастройкиКонтрагентов</CommonModule>
 			<CommonModule>ЭДО_ВходящиеДокументы</CommonModule>
 		<CommonModule>ЭлектронныеДокументыКлиент</CommonModule>
 		<CommonModule>ОбменСГИСЭПДКлиентПереопределяемый</CommonModule>
@@ -85,6 +86,7 @@
 			<DataProcessor>ЭДО_ПлатформаЭДО</DataProcessor>
 			<DataProcessor>ЭДО_КарточкаДокумента</DataProcessor>
 			<DataProcessor>ЭДО_ЦентрУправления</DataProcessor>
+			<DataProcessor>ЭДО_НастройкиЭДО</DataProcessor>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

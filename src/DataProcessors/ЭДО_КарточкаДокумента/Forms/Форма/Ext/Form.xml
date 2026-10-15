@@ -256,6 +256,9 @@
 										<ContextMenu name="ИсторияУправлениеПоискомКонтекстноеМеню" id="45"/>
 										<ExtendedTooltip name="ИсторияУправлениеПоискомРасширеннаяПодсказка" id="46"/>
 									</SearchControlAddition>
+									<Events>
+										<Event name="OnActivateRow">ИсторияПриАктивизацииСтроки</Event>
+									</Events>
 									<ChildItems>
 										<InputField name="КолонкаСоздан" id="47">
 											<DataPath>История.Создан</DataPath>
@@ -293,12 +296,24 @@
 											<ContextMenu name="КолонкаАдресОтправкиКонтекстноеМеню" id="54"/>
 											<ExtendedTooltip name="КолонкаАдресОтправкиРасширеннаяПодсказка" id="55"/>
 										</InputField>
+										<InputField name="КолонкаСтатусПоРусски" id="259">
+											<DataPath>История.СтатусПоРусски</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Состояние</v8:content>
+												</v8:item>
+											</Title>
+											<Width>22</Width>
+											<ContextMenu name="КолонкаСтатусПоРусскиКонтекстноеМеню" id="260"/>
+											<ExtendedTooltip name="КолонкаСтатусПоРусскиРасширеннаяПодсказка" id="261"/>
+										</InputField>
 										<InputField name="КолонкаСтатус" id="56">
 											<DataPath>История.Статус</DataPath>
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Статус</v8:content>
+													<v8:content>Код API</v8:content>
 												</v8:item>
 											</Title>
 											<Width>16</Width>
@@ -316,6 +331,18 @@
 											<Width>16</Width>
 											<ContextMenu name="КолонкаТипКонтекстноеМеню" id="60"/>
 											<ExtendedTooltip name="КолонкаТипРасширеннаяПодсказка" id="61"/>
+										</InputField>
+										<InputField name="КолонкаСуммаОтправки" id="262">
+											<DataPath>История.Сумма</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма</v8:content>
+												</v8:item>
+											</Title>
+											<Width>12</Width>
+											<ContextMenu name="КолонкаСуммаОтправкиКонтекстноеМеню" id="263"/>
+											<ExtendedTooltip name="КолонкаСуммаОтправкиРасширеннаяПодсказка" id="264"/>
 										</InputField>
 										<InputField name="КолонкаПричина" id="62">
 											<DataPath>История.Причина</DataPath>
@@ -343,6 +370,93 @@
 										</InputField>
 									</ChildItems>
 								</Table>
+								<UsualGroup name="ГруппаХодДокумента" id="287">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ход документа (выбранная отправка)</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Auto</Behavior>
+									<Representation>WeakSeparation</Representation>
+									<ExtendedTooltip name="ГруппаХодДокументаРасширеннаяПодсказка" id="288"/>
+									<ChildItems>
+										<Table name="ХодДокумента" id="265">
+											<CommandBarLocation>None</CommandBarLocation>
+											<ReadOnly>true</ReadOnly>
+											<HeightInTableRows>6</HeightInTableRows>
+											<DataPath>ХодДокумента</DataPath>
+											<SearchStringLocation>None</SearchStringLocation>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="ХодДокументаКонтекстноеМеню" id="266"/>
+											<AutoCommandBar name="ХодДокументаКоманднаяПанель" id="267"/>
+											<ExtendedTooltip name="ХодДокументаРасширеннаяПодсказка" id="268"/>
+											<SearchStringAddition name="ХодДокументаСтрокаПоиска" id="269">
+												<AdditionSource>
+													<Item>ХодДокумента</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ХодДокументаСтрокаПоискаКонтекстноеМеню" id="270"/>
+												<ExtendedTooltip name="ХодДокументаСтрокаПоискаРасширеннаяПодсказка" id="271"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ХодДокументаСостояниеПросмотра" id="272">
+												<AdditionSource>
+													<Item>ХодДокумента</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ХодДокументаСостояниеПросмотраКонтекстноеМеню" id="273"/>
+												<ExtendedTooltip name="ХодДокументаСостояниеПросмотраРасширеннаяПодсказка" id="274"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ХодДокументаУправлениеПоиском" id="275">
+												<AdditionSource>
+													<Item>ХодДокумента</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ХодДокументаУправлениеПоискомКонтекстноеМеню" id="276"/>
+												<ExtendedTooltip name="ХодДокументаУправлениеПоискомРасширеннаяПодсказка" id="277"/>
+											</SearchControlAddition>
+											<ChildItems>
+												<InputField name="ХодДокументаВремя" id="278">
+													<DataPath>ХодДокумента.Время</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Время</v8:content>
+														</v8:item>
+													</Title>
+													<Width>18</Width>
+													<ContextMenu name="ХодДокументаВремяКонтекстноеМеню" id="279"/>
+													<ExtendedTooltip name="ХодДокументаВремяРасширеннаяПодсказка" id="280"/>
+												</InputField>
+												<InputField name="ХодДокументаШаг" id="281">
+													<DataPath>ХодДокумента.Шаг</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Шаг</v8:content>
+														</v8:item>
+													</Title>
+													<Width>45</Width>
+													<ContextMenu name="ХодДокументаШагКонтекстноеМеню" id="282"/>
+													<ExtendedTooltip name="ХодДокументаШагРасширеннаяПодсказка" id="283"/>
+												</InputField>
+												<InputField name="ХодДокументаТип" id="284">
+													<DataPath>ХодДокумента.Тип</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Документ цепочки</v8:content>
+														</v8:item>
+													</Title>
+													<Width>20</Width>
+													<ContextMenu name="ХодДокументаТипКонтекстноеМеню" id="285"/>
+													<ExtendedTooltip name="ХодДокументаТипРасширеннаяПодсказка" id="286"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -965,6 +1079,73 @@
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
 							<v8:Length>30</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СтатусПоРусски" id="252">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="253">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ХодДокумента" id="254">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ход документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Время" id="255">
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Шаг" id="256">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>150</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Тип" id="257">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Статус" id="258">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
 					</Type>
