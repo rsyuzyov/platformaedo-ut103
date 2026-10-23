@@ -55,6 +55,11 @@
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ПеренестиВОбщиеРасширеннаяПодсказка" id="8"/>
 			</Button>
+			<Button name="СброситьНастройкиПоУмолчанию" id="926">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СброситьНастройкиПоУмолчанию</CommandName>
+				<ExtendedTooltip name="СброситьНастройкиПоУмолчаниюРасширеннаяПодсказка" id="927"/>
+			</Button>
 			<Button name="Закрыть" id="9">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Close</CommandName>
@@ -484,11 +489,6 @@
 					<ContextMenu name="НастройкиОператоровКонтекстноеМеню" id="923"/>
 					<ExtendedTooltip name="НастройкиОператоровРасширеннаяПодсказка" id="924"/>
 				</InputField>
-				<Button name="СброситьНастройкиОператоров" id="926">
-					<Type>UsualButton</Type>
-					<CommandName>Form.Command.СброситьНастройкиОператоров</CommandName>
-					<ExtendedTooltip name="СброситьНастройкиОператоровРасширеннаяПодсказка" id="927"/>
-				</Button>
 			</ChildItems>
 		</UsualGroup>
 		<InputField name="СостояниеГотовности" id="47">
@@ -812,7 +812,7 @@
 			</Title>
 			<Action>ПеренестиВОбщие</Action>
 		</Command>
-		<Command name="СброситьНастройкиОператоров" id="928">
+		<Command name="СброситьНастройкиПоУмолчанию" id="928">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -822,10 +822,10 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Удалить записанную таблицу операторов ЭДО: начнут действовать умолчания расширения. Остальные настройки не изменяются.</v8:content>
+					<v8:content>Вернуть к умолчаниям расширения глубину отбора, документов за прогон, готовые статусы заказа, окно синхронизации статусов, таймаут HTTP, паузу перед УКД и таблицу операторов ЭДО. Перед сбросом показывает, что изменится. Учетные записи, сертификаты, МЧД, адреса и даты не изменяются.</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>СброситьНастройкиОператоров</Action>
+			<Action>СброситьНастройкиПоУмолчанию</Action>
 		</Command>
 		<Command name="ДобавитьУчетнуюЗапись" id="256">
 			<Title>
