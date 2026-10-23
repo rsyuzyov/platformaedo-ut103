@@ -37,6 +37,11 @@
 				<CommandName>Form.Command.СнятьПаузу</CommandName>
 				<ExtendedTooltip name="КнопкаСнятьПаузуРасширеннаяПодсказка" id="8"/>
 			</Button>
+			<Button name="КнопкаНастройкиЭДО" id="910">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.НастройкиЭДО</CommandName>
+				<ExtendedTooltip name="КнопкаНастройкиЭДОРасширеннаяПодсказка" id="911"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -207,6 +212,8 @@
 										<Table name="ТаблицаИтогов" id="31">
 											<DataPath>ИтогиГрупп</DataPath>
 											<CommandBarLocation>None</CommandBarLocation>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
 											<Height>7</Height>
 											<Width>52</Width>
 											<HorizontalStretch>false</HorizontalStretch>
@@ -254,6 +261,56 @@
 													<ContextMenu name="ИтогГруппаКонтекстноеМеню" id="45"/>
 													<ExtendedTooltip name="ИтогГруппаРасширеннаяПодсказка" id="46"/>
 												</InputField>
+				<InputField name="ПолеОтборКонтрагент" id="946">
+					<DataPath>ОтборКонтрагент</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дашборд, разбор, контрагенты и приглашения - только по этому контрагенту; в приглашениях - и без отгрузок за период, чтобы позвать в ЭДО до первой отгрузки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ChoiceButton>true</ChoiceButton>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ПолеОтборКонтрагентКонтекстноеМеню" id="947"/>
+					<ExtendedTooltip name="ПолеОтборКонтрагентРасширеннаяПодсказка" id="948"/>
+					<Events>
+						<Event name="OnChange">ОтборПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПолеНомерДокумента" id="949">
+					<DataPath>ПоискНомерДокумента</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ №</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер реализации, корректировки или акта сверки; Enter открывает карточку ЭДО документа</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>16</Width>
+					<ClearButton>true</ClearButton>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>номер, Enter</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ПолеНомерДокументаКонтекстноеМеню" id="950"/>
+					<ExtendedTooltip name="ПолеНомерДокументаРасширеннаяПодсказка" id="951"/>
+					<Events>
+						<Event name="OnChange">ПолеНомерДокументаПриИзменении</Event>
+					</Events>
+				</InputField>
 												<InputField name="ИтогКоличество" id="47">
 													<DataPath>ИтогиГрупп.Количество</DataPath>
 													<Title>
@@ -310,6 +367,8 @@
 										<Table name="ТаблицаКонтура" id="55">
 											<DataPath>Контур</DataPath>
 											<CommandBarLocation>None</CommandBarLocation>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
 											<Height>9</Height>
 											<ContextMenu name="ТаблицаКонтураКонтекстноеМеню" id="56"/>
 											<AutoCommandBar name="ТаблицаКонтураКоманднаяПанель" id="57"/>
@@ -388,6 +447,8 @@
 								<Table name="ТаблицаСостояний" id="76">
 									<DataPath>Состояния</DataPath>
 									<CommandBarLocation>None</CommandBarLocation>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
 									<Height>12</Height>
 									<ContextMenu name="ТаблицаСостоянийКонтекстноеМеню" id="77"/>
 									<AutoCommandBar name="ТаблицаСостоянийКоманднаяПанель" id="78"/>
@@ -501,6 +562,8 @@
 						<Table name="ТаблицаПризнаков" id="106">
 							<DataPath>Контрагенты</DataPath>
 							<CommandBarLocation>None</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<Height>12</Height>
 							<ContextMenu name="ТаблицаПризнаковКонтекстноеМеню" id="107"/>
 							<AutoCommandBar name="ТаблицаПризнаковКоманднаяПанель" id="108"/>
@@ -564,6 +627,8 @@
 						<Table name="ТаблицаОрганизаций" id="125">
 							<DataPath>Организации</DataPath>
 							<CommandBarLocation>None</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<Height>8</Height>
 							<ContextMenu name="ТаблицаОрганизацийКонтекстноеМеню" id="126"/>
 							<AutoCommandBar name="ТаблицаОрганизацийКоманднаяПанель" id="127"/>
@@ -680,6 +745,8 @@
 						<Table name="ТаблицаПриглашенияСводка" id="605">
 							<DataPath>ПриглашенияСводка</DataPath>
 							<CommandBarLocation>None</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<Height>8</Height>
 							<ContextMenu name="ТаблицаПриглашенияСводкаКонтекстноеМеню" id="606"/>
 							<AutoCommandBar name="ТаблицаПриглашенияСводкаКоманднаяПанель" id="607"/>
@@ -743,6 +810,8 @@
 						<Table name="ТаблицаПриглашения" id="624">
 							<DataPath>Приглашения</DataPath>
 							<CommandBarLocation>Top</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<Height>18</Height>
 							<ContextMenu name="ТаблицаПриглашенияКонтекстноеМеню" id="625"/>
 							<AutoCommandBar name="ТаблицаПриглашенияКоманднаяПанель" id="626">
@@ -955,6 +1024,8 @@
 						</LabelDecoration>
 						<Table name="ТаблицаВходящиеСводка" id="806">
 							<CommandBarLocation>None</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<Height>4</Height>
 							<RowSelectionMode>Cell</RowSelectionMode>
 							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
@@ -1021,6 +1092,8 @@
 						</Table>
 						<Table name="ТаблицаВходящие" id="825">
 							<CommandBarLocation>Top</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<Height>18</Height>
 							<RowSelectionMode>Row</RowSelectionMode>
 							<UseAlternationRowColorBWA>false</UseAlternationRowColorBWA>
@@ -1038,6 +1111,11 @@
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.СоздатьПоступленияПоВходящим</CommandName>
 										<ExtendedTooltip name="КнопкаВхСоздатьПоступленияРасширеннаяПодсказка" id="831"/>
+									</Button>
+									<Button name="КнопкаВхПривязатьКПоступлению" id="927">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПривязатьКПоступлению</CommandName>
+										<ExtendedTooltip name="КнопкаВхПривязатьКПоступлениюРасширеннаяПодсказка" id="928"/>
 									</Button>
 								</ChildItems>
 							</AutoCommandBar>
@@ -1082,6 +1160,19 @@
 									<Width>10</Width>
 									<ContextMenu name="ВхДатаКонтекстноеМеню" id="843"/>
 									<ExtendedTooltip name="ВхДатаРасширеннаяПодсказка" id="844"/>
+								</InputField>
+								<InputField name="ВхВид" id="942">
+									<DataPath>Входящие.Вид</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип</v8:content>
+										</v8:item>
+									</Title>
+									<Width>10</Width>
+									<ContextMenu name="ВхВидКонтекстноеМеню" id="943"/>
+									<ExtendedTooltip name="ВхВидРасширеннаяПодсказка" id="944"/>
 								</InputField>
 								<InputField name="ВхНомер" id="845">
 									<DataPath>Входящие.Номер</DataPath>
@@ -1135,13 +1226,26 @@
 									<ContextMenu name="ВхОрганизацияКонтекстноеМеню" id="855"/>
 									<ExtendedTooltip name="ВхОрганизацияРасширеннаяПодсказка" id="856"/>
 								</InputField>
+								<InputField name="ВхСостояниеЭДО" id="924">
+									<DataPath>Входящие.СостояниеЭДО</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состояние</v8:content>
+										</v8:item>
+									</Title>
+									<Width>22</Width>
+									<ContextMenu name="ВхСостояниеЭДОКонтекстноеМеню" id="925"/>
+									<ExtendedTooltip name="ВхСостояниеЭДОРасширеннаяПодсказка" id="926"/>
+								</InputField>
 								<InputField name="ВхСтатус" id="857">
 									<DataPath>Входящие.Статус</DataPath>
 									<ReadOnly>true</ReadOnly>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>У оператора</v8:content>
+											<v8:content>Код API</v8:content>
 										</v8:item>
 									</Title>
 									<Width>12</Width>
@@ -1212,6 +1316,8 @@
 						<Table name="ТаблицаДокументов" id="155">
 							<DataPath>Документы</DataPath>
 							<CommandBarLocation>Top</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<Height>18</Height>
 							<ContextMenu name="ТаблицаДокументовКонтекстноеМеню" id="156"/>
 							<AutoCommandBar name="ТаблицаДокументовКоманднаяПанель" id="157">
@@ -1335,6 +1441,25 @@
 									<ContextMenu name="ДокСуммаКонтекстноеМеню" id="181"/>
 									<ExtendedTooltip name="ДокСуммаРасширеннаяПодсказка" id="182"/>
 								</InputField>
+								<InputField name="ДокСуммаВЭДО" id="916">
+									<DataPath>Документы.СуммаВЭДО</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма в ЭДО</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма с НДС, с которой документ ушел контрагенту (по карточке Платформы). Красным - документ изменен после отправки.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>14</Width>
+									<ContextMenu name="ДокСуммаВЭДОКонтекстноеМеню" id="917"/>
+									<ExtendedTooltip name="ДокСуммаВЭДОРасширеннаяПодсказка" id="918"/>
+								</InputField>
 								<InputField name="ДокСостояние" id="183">
 									<DataPath>Документы.Состояние</DataPath>
 									<Title>
@@ -1347,6 +1472,25 @@
 									<Width>30</Width>
 									<ContextMenu name="ДокСостояниеКонтекстноеМеню" id="184"/>
 									<ExtendedTooltip name="ДокСостояниеРасширеннаяПодсказка" id="185"/>
+								</InputField>
+								<InputField name="ДокЧестныйЗнак" id="919">
+									<DataPath>Документы.ЧестныйЗнак</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Честный знак</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Фиксация документа в Честном знаке - отдельно от подписи: документ может быть подписан, а фиксация упасть.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>24</Width>
+									<ContextMenu name="ДокЧестныйЗнакКонтекстноеМеню" id="920"/>
+									<ExtendedTooltip name="ДокЧестныйЗнакРасширеннаяПодсказка" id="921"/>
 								</InputField>
 								<InputField name="ДокДатаПОА" id="325">
 									<DataPath>Документы.ДатаПОА</DataPath>
@@ -1434,6 +1578,8 @@
 						<Table name="ТаблицаСписокКА" id="186">
 							<DataPath>СписокКонтрагентов</DataPath>
 							<CommandBarLocation>Top</CommandBarLocation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
 							<Height>18</Height>
 							<ContextMenu name="ТаблицаСписокКАКонтекстноеМеню" id="187"/>
 							<AutoCommandBar name="ТаблицаСписокКАКоманднаяПанель" id="188"/>
@@ -1665,6 +1811,32 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ОтборКонтрагент" id="952">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор контрагент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоискНомерДокумента" id="953">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>40</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 		<Attribute name="ТекстПосчитано" id="221">
 			<Title>
 				<v8:item>
@@ -1672,6 +1844,15 @@
 					<v8:content>Текст посчитано</v8:content>
 				</v8:item>
 			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВходящиеПрочитаныПо" id="945">
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1983,6 +2164,30 @@
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
 							<v8:Length>500</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаВЭДО" id="913">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаРасходится" id="914">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЧестныйЗнак" id="915">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
 					</Type>
@@ -2497,6 +2702,56 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="СостояниеЭДО" id="923">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Вид" id="930">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Версия" id="931">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоУКД" id="932">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ГидПродавца" id="933">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Функция" id="934">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 		<Attribute name="ВходящиеВсе" id="880">
@@ -2591,6 +2846,56 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
+				<Column name="СостояниеЭДО" id="922">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Вид" id="936">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Версия" id="937">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоУКД" id="938">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ГидПродавца" id="939">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Функция" id="940">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
 	</Attributes>
@@ -2651,6 +2956,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ОбменСейчасВыполнить</Action>
+		</Command>
+		<Command name="НастройкиЭДО" id="912">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки ЭДО</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Флаги ЭДО контрагентов: автоприемка, автоотправка, пауза. Без права изменения - только просмотр</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкиЭДОВыполнить</Action>
 		</Command>
 		<Command name="ОтправитьВыделенные" id="267">
 			<Title>
@@ -2728,7 +3048,7 @@
 		<Title>
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Пригласить всех, кому не звали</v8:content>
+				<v8:content>Пригласить всех, кого не звали</v8:content>
 			</v8:item>
 		</Title>
 		<Action>ПригласитьВсехНеЗваныхВыполнить</Action>
@@ -2762,6 +3082,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>СоздатьПоступленияПоВходящимВыполнить</Action>
+		</Command>
+		<Command name="ПривязатьКПоступлению" id="929">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Привязать к поступлению</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Связать входящий с поступлением, которое уже заведено в базе (например, по ТТН ЕГАИС), вместо создания второго.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПривязатьКПоступлениюВыполнить</Action>
 		</Command>
 	</Commands>
 </Form>
