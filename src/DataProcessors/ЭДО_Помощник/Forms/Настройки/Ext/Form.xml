@@ -55,6 +55,11 @@
 				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
 				<ExtendedTooltip name="ПеренестиВОбщиеРасширеннаяПодсказка" id="8"/>
 			</Button>
+			<Button name="СброситьНастройкиПоУмолчанию" id="926">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СброситьНастройкиПоУмолчанию</CommandName>
+				<ExtendedTooltip name="СброситьНастройкиПоУмолчаниюРасширеннаяПодсказка" id="927"/>
+			</Button>
 			<Button name="Закрыть" id="9">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.StandardCommand.Close</CommandName>
@@ -806,6 +811,21 @@
 				</v8:item>
 			</Title>
 			<Action>ПеренестиВОбщие</Action>
+		</Command>
+		<Command name="СброситьНастройкиПоУмолчанию" id="928">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановить настройки по умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вернуть к умолчаниям расширения глубину отбора, документов за прогон, готовые статусы заказа, окно синхронизации статусов, таймаут HTTP, паузу перед УКД и таблицу операторов ЭДО. Перед сбросом показывает, что изменится. Учетные записи, сертификаты, МЧД, адреса и даты не изменяются.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СброситьНастройкиПоУмолчанию</Action>
 		</Command>
 		<Command name="ДобавитьУчетнуюЗапись" id="256">
 			<Title>
